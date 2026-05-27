@@ -2,7 +2,7 @@
  * Copyright © 2017-2023 WireGuard LLC. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.amnezia.awg.fragment
+package io.routedns.vpn.fragment
 
 import android.app.Dialog
 import android.os.Bundle
@@ -10,11 +10,11 @@ import android.view.WindowManager
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import org.amnezia.awg.Application
-import org.amnezia.awg.R
-import org.amnezia.awg.databinding.ConfigNamingDialogFragmentBinding
-import org.amnezia.awg.config.BadConfigException
-import org.amnezia.awg.config.Config
+import io.routedns.vpn.Application
+import io.routedns.vpn.R
+import io.routedns.vpn.databinding.ConfigNamingDialogFragmentBinding
+import io.routedns.vpn.config.BadConfigException
+import io.routedns.vpn.config.Config
 import kotlinx.coroutines.launch
 import java.io.ByteArrayInputStream
 import java.io.IOException

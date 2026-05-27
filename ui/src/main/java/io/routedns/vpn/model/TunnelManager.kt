@@ -2,7 +2,7 @@
  * Copyright © 2017-2023 WireGuard LLC. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.amnezia.awg.model
+package io.routedns.vpn.model
 
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -12,20 +12,20 @@ import android.util.Log
 import android.widget.Toast
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
-import org.amnezia.awg.Application.Companion.get
-import org.amnezia.awg.Application.Companion.getBackend
-import org.amnezia.awg.Application.Companion.getTunnelManager
-import org.amnezia.awg.BR
-import org.amnezia.awg.R
-import org.amnezia.awg.backend.Statistics
-import org.amnezia.awg.backend.StatusCallback
-import org.amnezia.awg.backend.Tunnel
-import org.amnezia.awg.configStore.ConfigStore
-import org.amnezia.awg.databinding.ObservableSortedKeyedArrayList
-import org.amnezia.awg.util.ErrorMessages
-import org.amnezia.awg.util.UserKnobs
-import org.amnezia.awg.util.applicationScope
-import org.amnezia.awg.config.Config
+import io.routedns.vpn.Application.Companion.get
+import io.routedns.vpn.Application.Companion.getBackend
+import io.routedns.vpn.Application.Companion.getTunnelManager
+import io.routedns.vpn.BR
+import io.routedns.vpn.R
+import io.routedns.vpn.backend.Statistics
+import io.routedns.vpn.backend.StatusCallback
+import io.routedns.vpn.backend.Tunnel
+import io.routedns.vpn.configStore.ConfigStore
+import io.routedns.vpn.databinding.ObservableSortedKeyedArrayList
+import io.routedns.vpn.util.ErrorMessages
+import io.routedns.vpn.util.UserKnobs
+import io.routedns.vpn.util.applicationScope
+import io.routedns.vpn.config.Config
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -36,7 +36,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 /**
- * Maintains and mediates changes to the set of available AmneziaWG tunnels,
+ * Maintains and mediates changes to the set of available RouteVPN tunnels,
  */
 class TunnelManager(private val configStore: ConfigStore) : BaseObservable() {
     private val tunnels = CompletableDeferred<ObservableSortedKeyedArrayList<String, ObservableTunnel>>()
@@ -247,7 +247,7 @@ class TunnelManager(private val configStore: ConfigStore) : BaseObservable() {
                 val manager = getTunnelManager()
                 if (intent == null) return@launch
                 val action = intent.action ?: return@launch
-                if ("org.amnezia.awg.action.REFRESH_TUNNEL_STATES" == action) {
+                if ("io.routedns.vpn.action.REFRESH_TUNNEL_STATES" == action) {
                     manager.refreshTunnelStates()
                     return@launch
                 }
@@ -259,8 +259,8 @@ class TunnelManager(private val configStore: ConfigStore) : BaseObservable() {
                     return@launch
                 val state: Tunnel.State
                 state = when (action) {
-                    "org.amnezia.awg.action.SET_TUNNEL_UP" -> Tunnel.State.UP
-                    "org.amnezia.awg.action.SET_TUNNEL_DOWN" -> Tunnel.State.DOWN
+                    "io.routedns.vpn.action.SET_TUNNEL_UP" -> Tunnel.State.UP
+                    "io.routedns.vpn.action.SET_TUNNEL_DOWN" -> Tunnel.State.DOWN
                     else -> return@launch
                 }
                 val tunnelName = intent.getStringExtra("tunnel") ?: return@launch
@@ -284,6 +284,6 @@ class TunnelManager(private val configStore: ConfigStore) : BaseObservable() {
     }
 
     companion object {
-        private const val TAG = "AmneziaWG/TunnelManager"
+        private const val TAG = "RouteVPN/TunnelManager"
     }
 }

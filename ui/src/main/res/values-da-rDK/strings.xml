@@ -94,7 +94,7 @@
     <string name="config_rename_error">Kan ikke omdøbe konfigurationsfilen \"%s\"</string>
     <string name="config_save_error">Kan ikke gemme konfigurationen for \"%1$s\": %2$s</string>
     <string name="config_save_success">Konfiguration for \"%s\" blev gemt</string>
-    <string name="create_activity_title">Opret AmneziaWG tunnel</string>
+    <string name="create_activity_title">Opret RouteVPN tunnel</string>
     <string name="create_empty">Opret fra ny</string>
     <string name="create_from_file">Importér fra fil eller arkiv</string>
     <string name="create_from_qr_code">Scan fra QR-kode</string>
@@ -132,7 +132,7 @@
     <string name="latest_handshake_ago">%s siden</string>
     <string name="listen_port">Lytteport</string>
     <string name="log_export_error">Kunne ikke eksportere log: %s</string>
-    <string name="log_export_subject">AmneziaWG Android Log-fil</string>
+    <string name="log_export_subject">RouteVPN Android Log-fil</string>
     <string name="log_export_success">Gemt til \"%s\"</string>
     <string name="log_export_title">Eksportér log-fil</string>
     <string name="log_saver_activity_label">Gem log</string>
@@ -192,13 +192,13 @@
     <string name="type_name_root_go_userspace">Root Go userspace</string>
     <string name="unknown_error">Ukendt fejl</string>
     <string name="version_summary_unknown">Ukendt %s version</string>
-    <string name="version_title">AmneziaWG+ for Android v%s</string>
+    <string name="version_title">RouteVPN for Android v%s</string>
     <string name="zip_export_error">Ikke i stand til at eksportere tunneler: %s</string>
     <string name="zip_export_success">Gemt til \"%s\"</string>
     <string name="zip_export_title">Eksportér tunneler til zip-fil</string>
     <string name="biometric_auth_error">Fejl ved godkendelse</string>
     <string name="biometric_auth_error_reason">Fejl ved godkendelse: %s</string>
-    <string name="tasker_plugin_title">AmneziaWG tunnelstyring</string>
+    <string name="tasker_plugin_title">RouteVPN tunnelstyring</string>
     <string name="tasker_select_tunnel">Tunnel</string>
     <string name="tasker_select_action">Handling</string>
     <string name="tasker_action_up">Tænd</string>
@@ -213,7 +213,7 @@
     <string name="process_protection_summary_off">Processen er ikke beskyttet mod at blive lukket af systemet</string>
     <string name="process_protection_summary_on">Processen er beskyttet mod lukning (lav OOM-prioritet)</string>
     <string name="process_protection_error">Kunne ikke aktivere procesbeskyttelse</string>
-    <string name="root_tunnel_notification_channel">AmneziaWG+ Root-tunnel</string>
+    <string name="root_tunnel_notification_channel">RouteVPN Root-tunnel</string>
     <string name="root_tunnel_notification_connected">Forbundet</string>
     <string name="root_tunnel_notification_connecting">Forbinder…</string>
     <string name="root_tunnel_notification_cleanup">Rydder op\u2026</string>

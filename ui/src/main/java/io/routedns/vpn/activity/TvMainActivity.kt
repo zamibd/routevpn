@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.amnezia.awg.activity
+package io.routedns.vpn.activity
 
 import android.Manifest
 import android.content.ActivityNotFoundException
@@ -34,22 +34,22 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
-import org.amnezia.awg.Application
-import org.amnezia.awg.R
-import org.amnezia.awg.backend.GoBackend
-import org.amnezia.awg.backend.Tunnel
-import org.amnezia.awg.databinding.Keyed
-import org.amnezia.awg.databinding.ObservableKeyedArrayList
-import org.amnezia.awg.databinding.ObservableKeyedRecyclerViewAdapter
-import org.amnezia.awg.databinding.TvActivityBinding
-import org.amnezia.awg.databinding.TvFileListItemBinding
-import org.amnezia.awg.databinding.TvTunnelListItemBinding
-import org.amnezia.awg.model.ObservableTunnel
-import org.amnezia.awg.util.ErrorMessages
-import org.amnezia.awg.util.QuantityFormatter
-import org.amnezia.awg.util.TunnelImporter
-import org.amnezia.awg.util.UserKnobs
-import org.amnezia.awg.util.applicationScope
+import io.routedns.vpn.Application
+import io.routedns.vpn.R
+import io.routedns.vpn.backend.GoBackend
+import io.routedns.vpn.backend.Tunnel
+import io.routedns.vpn.databinding.Keyed
+import io.routedns.vpn.databinding.ObservableKeyedArrayList
+import io.routedns.vpn.databinding.ObservableKeyedRecyclerViewAdapter
+import io.routedns.vpn.databinding.TvActivityBinding
+import io.routedns.vpn.databinding.TvFileListItemBinding
+import io.routedns.vpn.databinding.TvTunnelListItemBinding
+import io.routedns.vpn.model.ObservableTunnel
+import io.routedns.vpn.util.ErrorMessages
+import io.routedns.vpn.util.QuantityFormatter
+import io.routedns.vpn.util.TunnelImporter
+import io.routedns.vpn.util.UserKnobs
+import io.routedns.vpn.util.applicationScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -431,6 +431,6 @@ class TvMainActivity : AppCompatActivity() {
     }
 
     companion object {
-        private const val TAG = "AmneziaWG/TvMainActivity"
+        private const val TAG = "RouteVPN/TvMainActivity"
     }
 }

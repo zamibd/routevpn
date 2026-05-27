@@ -1,4 +1,4 @@
-package org.amnezia.awg.backend;
+package io.routedns.vpn.backend;
 
 /**
  * Callback for status changes detected by the status polling job.

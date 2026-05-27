@@ -1,20 +1,20 @@
 /*
- * Copyright © 2024 AmneziaWG. All Rights Reserved.
+ * Copyright © 2024 RouteVPN. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.amnezia.awg.backend;
+package io.routedns.vpn.backend;
 
 import android.content.Context;
 import android.util.Log;
 
-import org.amnezia.awg.backend.BackendException.Reason;
-import org.amnezia.awg.config.Config;
-import org.amnezia.awg.config.InetEndpoint;
-import org.amnezia.awg.config.InetNetwork;
-import org.amnezia.awg.config.Peer;
-import org.amnezia.awg.util.NonNullForAll;
-import org.amnezia.awg.util.RootShell;
+import io.routedns.vpn.backend.BackendException.Reason;
+import io.routedns.vpn.config.Config;
+import io.routedns.vpn.config.InetEndpoint;
+import io.routedns.vpn.config.InetNetwork;
+import io.routedns.vpn.config.Peer;
+import io.routedns.vpn.util.NonNullForAll;
+import io.routedns.vpn.util.RootShell;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -28,7 +28,7 @@ import java.util.Set;
 import androidx.annotation.Nullable;
 import androidx.collection.ArraySet;
 
-import static org.amnezia.awg.GoBackend.*;
+import static io.routedns.vpn.GoBackend.*;
 
 /**
  * Manages root networking operations: routing, iptables rules, and cleanup.
@@ -37,7 +37,7 @@ import static org.amnezia.awg.GoBackend.*;
  */
 @NonNullForAll
 final class RootNetworkManager {
-    private static final String TAG = "AmneziaWG/RootGoBackend";
+    private static final String TAG = "RouteVPN/RootGoBackend";
     static final String TUN_INTERFACE = "awg0";
     static final int FWMARK = 51820;
     static final int ROUTING_TABLE = 51820;

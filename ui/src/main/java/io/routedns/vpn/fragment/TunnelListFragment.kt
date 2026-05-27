@@ -2,7 +2,7 @@
  * Copyright © 2017-2023 WireGuard LLC. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.amnezia.awg.fragment
+package io.routedns.vpn.fragment
 
 import android.content.Intent
 import android.content.res.Resources
@@ -26,24 +26,24 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.zxing.qrcode.QRCodeReader
 import com.journeyapps.barcodescanner.ScanContract
 import com.journeyapps.barcodescanner.ScanOptions
-import org.amnezia.awg.Application
-import org.amnezia.awg.R
-import org.amnezia.awg.activity.TunnelCreatorActivity
-import org.amnezia.awg.databinding.ObservableKeyedRecyclerViewAdapter.RowConfigurationHandler
-import org.amnezia.awg.databinding.TunnelListFragmentBinding
-import org.amnezia.awg.databinding.TunnelListItemBinding
-import org.amnezia.awg.model.ObservableTunnel
-import org.amnezia.awg.util.ErrorMessages
-import org.amnezia.awg.util.QrCodeFromFileScanner
-import org.amnezia.awg.util.TunnelImporter
-import org.amnezia.awg.widget.MultiselectableRelativeLayout
+import io.routedns.vpn.Application
+import io.routedns.vpn.R
+import io.routedns.vpn.activity.TunnelCreatorActivity
+import io.routedns.vpn.databinding.ObservableKeyedRecyclerViewAdapter.RowConfigurationHandler
+import io.routedns.vpn.databinding.TunnelListFragmentBinding
+import io.routedns.vpn.databinding.TunnelListItemBinding
+import io.routedns.vpn.model.ObservableTunnel
+import io.routedns.vpn.util.ErrorMessages
+import io.routedns.vpn.util.QrCodeFromFileScanner
+import io.routedns.vpn.util.TunnelImporter
+import io.routedns.vpn.widget.MultiselectableRelativeLayout
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.launch
 
 /**
- * Fragment containing a list of known AmneziaWG tunnels. It allows creating and deleting tunnels.
+ * Fragment containing a list of known RouteVPN tunnels. It allows creating and deleting tunnels.
  */
 class TunnelListFragment : BaseFragment() {
     private val actionModeListener = ActionModeListener()
@@ -333,6 +333,6 @@ class TunnelListFragment : BaseFragment() {
 
     companion object {
         private const val CHECKED_ITEMS = "CHECKED_ITEMS"
-        private const val TAG = "AmneziaWG/TunnelListFragment"
+        private const val TAG = "RouteVPN/TunnelListFragment"
     }
 }

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.amnezia.awg.activity
+package io.routedns.vpn.activity
 
 import android.content.ClipDescription.compareMimeTypes
 import android.content.ContentProvider
@@ -36,13 +36,13 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textview.MaterialTextView
-import org.amnezia.awg.BuildConfig
-import org.amnezia.awg.R
-import org.amnezia.awg.databinding.LogViewerActivityBinding
-import org.amnezia.awg.util.DownloadsFileSaver
-import org.amnezia.awg.util.ErrorMessages
-import org.amnezia.awg.util.resolveAttribute
-import org.amnezia.awg.crypto.KeyPair
+import io.routedns.vpn.BuildConfig
+import io.routedns.vpn.R
+import io.routedns.vpn.databinding.LogViewerActivityBinding
+import io.routedns.vpn.util.DownloadsFileSaver
+import io.routedns.vpn.util.ErrorMessages
+import io.routedns.vpn.util.resolveAttribute
+import io.routedns.vpn.crypto.KeyPair
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
@@ -171,7 +171,7 @@ class LogViewerActivity : AppCompatActivity() {
         var outputFile: DownloadsFileSaver.DownloadsFile? = null
         withContext(Dispatchers.IO) {
             try {
-                outputFile = downloadsFileSaver.save("amneziawg-log.txt", "text/plain", true)
+                outputFile = downloadsFileSaver.save("routevpn-log.txt", "text/plain", true)
                 outputFile?.outputStream?.write(rawLogBytes())
             } catch (e: Throwable) {
                 outputFile?.delete()
@@ -294,7 +294,7 @@ class LogViewerActivity : AppCompatActivity() {
         private val THREADTIME_LINE: Pattern =
             Pattern.compile("^(\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}.\\d{3})(?:\\s+[0-9A-Za-z]+)?\\s+(\\d+)\\s+(\\d+)\\s+([A-Z])\\s+(.+?)\\s*: (.*)$")
         private val LOGS: MutableMap<String, ByteArray> = ConcurrentHashMap()
-        private const val TAG = "AmneziaWG/LogViewerActivity"
+        private const val TAG = "RouteVPN/LogViewerActivity"
     }
 
     private inner class LogEntryAdapter : RecyclerView.Adapter<LogEntryAdapter.ViewHolder>() {
@@ -353,7 +353,7 @@ class LogViewerActivity : AppCompatActivity() {
         override fun query(uri: Uri, projection: Array<out String>?, selection: String?, selectionArgs: Array<out String>?, sortOrder: String?): Cursor? =
             logForUri(uri)?.let {
                 val m = MatrixCursor(arrayOf(android.provider.OpenableColumns.DISPLAY_NAME, android.provider.OpenableColumns.SIZE), 1)
-                m.addRow(arrayOf<Any>("amneziawg-log.txt", it.size.toLong()))
+                m.addRow(arrayOf<Any>("routevpn-log.txt", it.size.toLong()))
                 m
             }
 

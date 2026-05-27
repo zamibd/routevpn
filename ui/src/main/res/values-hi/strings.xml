@@ -169,7 +169,7 @@
     <string name="version_summary">%1$s बैकएंड %2$s</string>
     <string name="version_summary_checking">%s बैकएंड संस्करण की जाँच कर रहा है</string>
     <string name="version_summary_unknown">अज्ञात %s संस्करण</string>
-    <string name="version_title">AmneziaWG+ for Android v%s</string>
+    <string name="version_title">RouteVPN for Android v%s</string>
     <string name="vpn_not_authorized_error">वीपीएन सेवा उपयोगकर्ता द्वारा अधिकृत नहीं है</string>
     <string name="vpn_start_error">एंड्रॉयड वीपीएन सेवा प्रारंभ करने में असमर्थ</string>
     <string name="zip_export_error">टनल का निर्यात करने में असमर्थ: %s</string>
@@ -185,7 +185,7 @@
     <string name="process_protection_summary_off">प्रक्रिया सिस्टम द्वारा बंद किए जाने से सुरक्षित नहीं है</string>
     <string name="process_protection_summary_on">प्रक्रिया बंद किए जाने से सुरक्षित है (कम OOM प्राथमिकता)</string>
     <string name="process_protection_error">प्रक्रिया सुरक्षा लागू करने में विफल</string>
-    <string name="root_tunnel_notification_channel">AmneziaWG+ Root Tunnel</string>
+    <string name="root_tunnel_notification_channel">RouteVPN Root Tunnel</string>
     <string name="root_tunnel_notification_connected">कनेक्टेड</string>
     <string name="root_tunnel_notification_connecting">कनेक्ट हो रहा है…</string>
     <string name="root_tunnel_notification_cleanup">साफ़ कर रहा है\u2026</string>

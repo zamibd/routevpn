@@ -1,9 +1,9 @@
 /*
- * Copyright © 2025 AmneziaWG. All Rights conneserved.
+ * Copyright © 2025 RouteVPN. All Rights conneserved.
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.amnezia.awg.util
+package io.routedns.vpn.util
 
 import android.Manifest
 import android.content.Context
@@ -25,7 +25,7 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.getSystemService
 import kotlinx.coroutines.delay
 
-private const val TAG = "AmneziaWG/NetworkState"
+private const val TAG = "RouteVPN/NetworkState"
 private const val BIND_NETWORK_RETRY_ATTEMPTS = 5
 
 enum class NetworkType {

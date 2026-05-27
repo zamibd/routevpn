@@ -134,7 +134,7 @@
     <string name="key_length_explanation_hex">: वायरगार्ड हेक्स कीज़ 64 अक्षरों की होनी चाहिए (32 बाइट्स)</string>
     <string name="listen_port">पोर्ट सूने</string>
     <string name="log_export_error">लॉग निर्यात करने में असमर्थ: %s</string>
-    <string name="log_export_subject">AmneziaWG एंड्राइड लॉग फ़ाइल</string>
+    <string name="log_export_subject">RouteVPN एंड्राइड लॉग फ़ाइल</string>
     <string name="log_export_success">“%s” में सहेजा गया</string>
     <string name="log_export_title">लॉग फ़ाइल निर्यात करें</string>
     <string name="log_saver_activity_label">लॉग सहेजे</string>
@@ -220,7 +220,7 @@
     <string name="version_summary">%1$s बैकएंड %2$s</string>
     <string name="version_summary_checking">%s बैकएंड संस्करण की जाँच कर रहा है</string>
     <string name="version_summary_unknown">अज्ञात %s संस्करण</string>
-    <string name="version_title">AmneziaWG+ for Android v%s</string>
+    <string name="version_title">RouteVPN for Android v%s</string>
     <string name="vpn_not_authorized_error">वीपीएन सेवा उपयोगकर्ता द्वारा अधिकृत नहीं है</string>
     <string name="vpn_start_error">एंड्रॉयड वीपीएन सेवा प्रारंभ करने में असमर्थ</string>
     <string name="zip_export_error">टनल का निर्यात करने में असमर्थ: %s</string>
@@ -231,7 +231,7 @@
     <string name="biometric_prompt_private_key_title">प्राइवेट की देखने के लिए प्रमाणित करें</string>
     <string name="biometric_auth_error">प्रमाणीकरण विफलता</string>
     <string name="biometric_auth_error_reason">प्रमाणीकरण विफल: %s</string>
-    <string name="tasker_plugin_title">AmneziaWG सुरंग नियंत्रण</string>
+    <string name="tasker_plugin_title">RouteVPN सुरंग नियंत्रण</string>
     <string name="tasker_select_tunnel">सुरंग</string>
     <string name="tasker_select_action">क्रिया</string>
     <string name="tasker_action_up">चालू करें</string>
@@ -246,7 +246,7 @@
     <string name="process_protection_summary_off">प्रक्रिया सिस्टम द्वारा बंद किए जाने से सुरक्षित नहीं है</string>
     <string name="process_protection_summary_on">प्रक्रिया बंद किए जाने से सुरक्षित है (कम OOM प्राथमिकता)</string>
     <string name="process_protection_error">प्रक्रिया सुरक्षा लागू करने में विफल</string>
-    <string name="root_tunnel_notification_channel">AmneziaWG+ Root Tunnel</string>
+    <string name="root_tunnel_notification_channel">RouteVPN Root Tunnel</string>
     <string name="root_tunnel_notification_connected">कनेक्टेड</string>
     <string name="root_tunnel_notification_connecting">कनेक्ट हो रहा है…</string>
     <string name="root_tunnel_notification_cleanup">साफ़ कर रहा है\u2026</string>

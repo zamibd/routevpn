@@ -4,9 +4,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.amnezia.awg.crypto;
+package io.routedns.vpn.crypto;
 
-import org.amnezia.awg.util.NonNullForAll;
+import io.routedns.vpn.util.NonNullForAll;
 
 import java.util.Arrays;
 
@@ -15,7 +15,7 @@ import androidx.annotation.Nullable;
 /**
  * Implementation of Curve25519 ECDH.
  * <p>
- * This implementation was imported to AmneziaWG from noise-java:
+ * This implementation was imported to RouteVPN from noise-java:
  * https://github.com/rweather/noise-java
  * <p>
  * This implementation is based on that from arduinolibs:

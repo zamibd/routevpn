@@ -3,9 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.amnezia.awg.config;
+package io.routedns.vpn.config;
 
-import org.amnezia.awg.util.NonNullForAll;
+import io.routedns.vpn.util.NonNullForAll;
 
 import java.lang.reflect.Method;
 import java.net.Inet4Address;

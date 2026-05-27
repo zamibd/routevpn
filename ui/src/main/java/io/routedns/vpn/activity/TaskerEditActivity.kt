@@ -1,8 +1,8 @@
 /*
- * Copyright © 2024 AmneziaWG. All Rights Reserved.
+ * Copyright © 2024 RouteVPN. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.amnezia.awg.activity
+package io.routedns.vpn.activity
 
 import android.app.Activity
 import android.content.Intent
@@ -11,9 +11,9 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import org.amnezia.awg.Application
-import org.amnezia.awg.R
-import org.amnezia.awg.databinding.ActivityTaskerBinding
+import io.routedns.vpn.Application
+import io.routedns.vpn.R
+import io.routedns.vpn.databinding.ActivityTaskerBinding
 import kotlinx.coroutines.launch
 
 /**

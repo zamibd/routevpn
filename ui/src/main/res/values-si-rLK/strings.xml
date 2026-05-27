@@ -75,7 +75,7 @@
     <string name="config_rename_error">“%s” වින්‍යාස ගොනුව නැවත නම් කළ නොහැකිය</string>
     <string name="config_save_error">“%1$s”: %2$s සඳහා වින්‍යාසය සුරැකීමට නොහැකිය</string>
     <string name="config_save_success">“%s” සඳහා සාර්ථකව වින්‍යාසය සුරැකිණි</string>
-    <string name="create_activity_title">AmneziaWG Tunnel සාදන්න</string>
+    <string name="create_activity_title">RouteVPN Tunnel සාදන්න</string>
     <string name="create_bin_dir_error">දේශීය ද්විමය නාමාවලිය සෑදිය නොහැක</string>
     <string name="create_downloads_file_error">බාගැනීම් නාමාවලියෙහි ගොනුව සෑදීමට නොහැකිය</string>
     <string name="create_empty">මුල සිට නිර්මාණය කරන්න</string>
@@ -109,12 +109,12 @@
     <string name="interface_title">අතුරුමුහුණත</string>
     <string name="key_contents_error">යතුරේ නරක අකුරු</string>
     <string name="key_length_error">යතුරේ ආයාමය සාවද්‍යයි</string>
-    <string name="key_length_explanation_base64">: AmneziaWG base64 යතුරු අක්ෂර 44 (බයිට් 32) විය යුතුය.</string>
+    <string name="key_length_explanation_base64">: RouteVPN base64 යතුරු අක්ෂර 44 (බයිට් 32) විය යුතුය.</string>
     <string name="key_length_explanation_binary">: වයර්ගාඩ් යතුරු බයිට 32 ක් විය යුතුය</string>
-    <string name="key_length_explanation_hex">: AmneziaWG hex යතුරු අක්ෂර 64 (බයිට් 32) විය යුතුය.</string>
+    <string name="key_length_explanation_hex">: RouteVPN hex යතුරු අක්ෂර 64 (බයිට් 32) විය යුතුය.</string>
     <string name="listen_port">සවන්දීමේ කෙවෙනිය</string>
     <string name="log_export_error">ලොගය අපනයනය කළ නොහැක: %s</string>
-    <string name="log_export_subject">AmneziaWG Android ලොග් ගොනුව</string>
+    <string name="log_export_subject">RouteVPN Android ලොග් ගොනුව</string>
     <string name="log_export_success">“%s” ට සුරැකිණි</string>
     <string name="log_export_title">ලොග් ගොනුව අපනයනය කරන්න</string>
     <string name="log_saver_activity_label">ලොගය සුරකින්න</string>
@@ -169,7 +169,7 @@
     <string name="shell_start_error">Shell ආරම්භ කිරීමට අසමත් විය: %d</string>
     <string name="success_application_will_restart">සාර්ථකයි. යෙදුම දැන් නැවත ආරම්භ කෙරේ…</string>
     <string name="toggle_all">සියල්ල ටොගල් කරන්න</string>
-    <string name="toggle_error">AmneziaWG උමං ටොගල් කිරීමේ දෝෂය: %s</string>
+    <string name="toggle_error">RouteVPN උමං ටොගල් කිරීමේ දෝෂය: %s</string>
     <string name="tools_installer_already">awg සහ awg-quick දැනටමත් ස්ථාපනය කර ඇත</string>
     <string name="tools_installer_failure">විධාන රේඛා මෙවලම් ස්ථාපනය කළ නොහැක (root නැත?)</string>
     <string name="tools_installer_initial">ස්ක්‍රිප්ටින් සඳහා විකල්ප මෙවලම් ස්ථාපනය කරන්න</string>
@@ -216,7 +216,7 @@
     <string name="biometric_prompt_private_key_title">පුද්ගලික යතුර බැලීමට සත්‍යාපනය කරන්න</string>
     <string name="biometric_auth_error">සත්‍යාපනය අසාර්ථක වීම</string>
     <string name="biometric_auth_error_reason">සත්‍යාපන අසාර්ථකත්වය: %s</string>
-    <string name="tasker_plugin_title">AmneziaWG උමං පාලනය</string>
+    <string name="tasker_plugin_title">RouteVPN උමං පාලනය</string>
     <string name="tasker_select_tunnel">උමඟ</string>
     <string name="tasker_select_action">ක්‍රියාව</string>
     <string name="tasker_action_up">සක්‍රිය කරන්න</string>
@@ -231,7 +231,7 @@
     <string name="process_protection_summary_off">ක්‍රියාවලිය පද්ධතිය මගින් අවසන් කිරීමෙන් ආරක්ෂා නොවේ</string>
     <string name="process_protection_summary_on">ක්‍රියාවලිය අවසන් කිරීමෙන් ආරක්ෂා වේ (අඩු OOM ප්‍රමුඛතාව)</string>
     <string name="process_protection_error">ක්‍රියාවලි ආරක්ෂාව යෙදීම අසාර්ථකයි</string>
-    <string name="root_tunnel_notification_channel">AmneziaWG+ Root Tunnel</string>
+    <string name="root_tunnel_notification_channel">RouteVPN Root Tunnel</string>
     <string name="root_tunnel_notification_connected">සම්බන්ධිතයි</string>
     <string name="root_tunnel_notification_connecting">සම්බන්ධ වෙමින්…</string>
     <string name="root_tunnel_notification_cleanup">පිරිසිදු කරමින්\u2026</string>

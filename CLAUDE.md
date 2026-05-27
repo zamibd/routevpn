@@ -40,14 +40,14 @@ Release signing in CI/local release builds uses these environment variables or s
 
 ## Modules
 
-- **`ui/`** — Android application module (Kotlin + Android resources). Namespace/application ID comes from `amneziawgPackageName` in `gradle.properties` and currently resolves to `org.amnezia.awg`
+- **`ui/`** — Android application module (Kotlin + Android resources). Namespace/application ID comes from `amneziawgPackageName` in `gradle.properties` and currently resolves to `io.routedns.vpn`
 - **`tunnel/`** — Android library module (mostly Java) with config parsing, cryptography, VPN/root backends, JNI bindings, and native build integration
 
 ## Architecture
 
 **MVVM** with Android Data Binding and ViewBinding. UI layer is primarily Kotlin; tunnel/core logic is primarily Java.
 
-### UI module (`ui/src/main/java/org/amnezia/awg/`)
+### UI module (`ui/src/main/java/io/routedns/vpn/`)
 - `activity/` — Activities including `MainActivity`, `TvMainActivity`, `SettingsActivity`, `TunnelCreatorActivity`, `TunnelToggleActivity`, `TaskerEditActivity`, and `LogViewerActivity`
 - `fragment/` — Fragments and sheets for tunnel list/details/editor flow (`TunnelListFragment`, `TunnelDetailFragment`, `TunnelEditorFragment`, `AddTunnelsSheet`, etc.)
 - `viewmodel/` — Proxy classes (`InterfaceProxy`, `PeerProxy`, `ConfigProxy`) used by data binding
@@ -60,7 +60,7 @@ Release signing in CI/local release builds uses these environment variables or s
 - `TaskerFireReceiver.kt` — Tasker plugin action receiver
 - `activity/TaskerEditActivity.kt` — Tasker plugin configuration UI
 
-### Tunnel module (`tunnel/src/main/java/org/amnezia/awg/`)
+### Tunnel module (`tunnel/src/main/java/io/routedns/vpn/`)
 - `GoBackend.java` — JNI bridge class exposing native `libwg-go` entry points
 - `backend/` — Backend abstraction and implementations: `GoBackend` (primary VPN backend), `RootGoBackend`, `AwgQuickBackend`, plus root helpers/services and tunnel statistics/status APIs
 - `config/` — WireGuard/AmneziaWG config parsing (`Config`, `Interface`, `Peer`, `InetEndpoint`, `InetNetwork`, validation/errors)

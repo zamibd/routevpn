@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.amnezia.awg.config;
+package io.routedns.vpn.config;
 
 import org.junit.Test;
 

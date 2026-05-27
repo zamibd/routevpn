@@ -2,22 +2,22 @@
  * Copyright © 2017-2023 WireGuard LLC. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.amnezia.awg.util
+package io.routedns.vpn.util
 
 import android.content.res.Resources
 import android.os.RemoteException
 import com.google.zxing.ChecksumException
 import com.google.zxing.NotFoundException
-import org.amnezia.awg.Application
-import org.amnezia.awg.R
-import org.amnezia.awg.backend.BackendException
-import org.amnezia.awg.util.RootShell.RootShellException
-import org.amnezia.awg.config.BadConfigException
-import org.amnezia.awg.config.InetEndpoint
-import org.amnezia.awg.config.InetNetwork
-import org.amnezia.awg.config.ParseException
-import org.amnezia.awg.crypto.Key
-import org.amnezia.awg.crypto.KeyFormatException
+import io.routedns.vpn.Application
+import io.routedns.vpn.R
+import io.routedns.vpn.backend.BackendException
+import io.routedns.vpn.util.RootShell.RootShellException
+import io.routedns.vpn.config.BadConfigException
+import io.routedns.vpn.config.InetEndpoint
+import io.routedns.vpn.config.InetNetwork
+import io.routedns.vpn.config.ParseException
+import io.routedns.vpn.crypto.Key
+import io.routedns.vpn.crypto.KeyFormatException
 import java.net.InetAddress
 
 object ErrorMessages {

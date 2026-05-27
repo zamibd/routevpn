@@ -2,7 +2,7 @@
  * Copyright © 2017-2023 WireGuard LLC. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.amnezia.awg
+package io.routedns.vpn
 
 import android.content.Context
 import android.content.Intent
@@ -17,18 +17,18 @@ import androidx.datastore.preferences.core.PreferenceDataStoreFactory
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStoreFile
 import com.google.android.material.color.DynamicColors
-import org.amnezia.awg.backend.Backend
-import org.amnezia.awg.backend.GoBackend
-import org.amnezia.awg.backend.AwgQuickBackend
-import org.amnezia.awg.backend.RootGoBackend
-import org.amnezia.awg.configStore.FileConfigStore
-import org.amnezia.awg.model.TunnelManager
-import org.amnezia.awg.util.NetworkState
-import org.amnezia.awg.util.NetworkType
-import org.amnezia.awg.util.RootShell
-import org.amnezia.awg.util.ToolsInstaller
-import org.amnezia.awg.util.UserKnobs
-import org.amnezia.awg.util.applicationScope
+import io.routedns.vpn.backend.Backend
+import io.routedns.vpn.backend.GoBackend
+import io.routedns.vpn.backend.AwgQuickBackend
+import io.routedns.vpn.backend.RootGoBackend
+import io.routedns.vpn.configStore.FileConfigStore
+import io.routedns.vpn.model.TunnelManager
+import io.routedns.vpn.util.NetworkState
+import io.routedns.vpn.util.NetworkType
+import io.routedns.vpn.util.RootShell
+import io.routedns.vpn.util.ToolsInstaller
+import io.routedns.vpn.util.UserKnobs
+import io.routedns.vpn.util.applicationScope
 import kotlinx.coroutines.CompletableDeferred
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -172,7 +172,7 @@ class Application : android.app.Application() {
         coroutineScope.launch {
             try {
                 val activeTunnels = tunnelManager.getTunnels().filter { 
-                    it.state == org.amnezia.awg.backend.Tunnel.State.UP 
+                    it.state == io.routedns.vpn.backend.Tunnel.State.UP 
                 }
 
                 if (activeTunnels.isEmpty()) {
@@ -186,10 +186,10 @@ class Application : android.app.Application() {
                     try {
                         Log.d(TAG, "Disconnecting tunnel: ${tunnel.name}")
                         // Toggle tunnel off and on to reconnect
-                        tunnel.setStateAsync(org.amnezia.awg.backend.Tunnel.State.DOWN)
+                        tunnel.setStateAsync(io.routedns.vpn.backend.Tunnel.State.DOWN)
                         kotlinx.coroutines.delay(500) // Small delay for cleanup
                         Log.d(TAG, "Reconnecting tunnel: ${tunnel.name}")
-                        tunnel.setStateAsync(org.amnezia.awg.backend.Tunnel.State.UP)
+                        tunnel.setStateAsync(io.routedns.vpn.backend.Tunnel.State.UP)
                         Log.i(TAG, "Successfully reconnected tunnel: ${tunnel.name}")
                     } catch (e: Exception) {
                         Log.e(TAG, "Failed to reconnect tunnel ${tunnel.name}", e)
@@ -218,8 +218,8 @@ class Application : android.app.Application() {
     }
 
     companion object {
-        val USER_AGENT = String.format(Locale.ENGLISH, "AmneziaWG/%s (Android %d; %s; %s; %s %s; %s)", BuildConfig.VERSION_NAME, Build.VERSION.SDK_INT, if (Build.SUPPORTED_ABIS.isNotEmpty()) Build.SUPPORTED_ABIS[0] else "unknown ABI", Build.BOARD, Build.MANUFACTURER, Build.MODEL, Build.FINGERPRINT)
-        private const val TAG = "AmneziaWG/Application"
+        val USER_AGENT = String.format(Locale.ENGLISH, "RouteVPN/%s (Android %d; %s; %s; %s %s; %s)", BuildConfig.VERSION_NAME, Build.VERSION.SDK_INT, if (Build.SUPPORTED_ABIS.isNotEmpty()) Build.SUPPORTED_ABIS[0] else "unknown ABI", Build.BOARD, Build.MANUFACTURER, Build.MODEL, Build.FINGERPRINT)
+        private const val TAG = "RouteVPN/Application"
         private lateinit var weakSelf: WeakReference<Application>
 
         fun get(): Application {

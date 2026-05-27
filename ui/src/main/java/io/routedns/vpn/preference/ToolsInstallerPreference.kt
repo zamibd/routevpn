@@ -2,15 +2,15 @@
  * Copyright © 2017-2023 WireGuard LLC. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.amnezia.awg.preference
+package io.routedns.vpn.preference
 
 import android.content.Context
 import android.util.AttributeSet
 import androidx.preference.Preference
-import org.amnezia.awg.Application
-import org.amnezia.awg.R
-import org.amnezia.awg.util.ToolsInstaller
-import org.amnezia.awg.util.lifecycleScope
+import io.routedns.vpn.Application
+import io.routedns.vpn.R
+import io.routedns.vpn.util.ToolsInstaller
+import io.routedns.vpn.util.lifecycleScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext

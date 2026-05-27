@@ -3,11 +3,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.amnezia.awg.util
+package io.routedns.vpn.util
 
 import android.os.Build
-import org.amnezia.awg.Application
-import org.amnezia.awg.R
+import io.routedns.vpn.Application
+import io.routedns.vpn.R
 
 object QuantityFormatter {
     fun formatBytes(bytes: Long): String {

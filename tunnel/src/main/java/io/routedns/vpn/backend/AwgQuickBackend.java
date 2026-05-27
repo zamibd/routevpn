@@ -3,19 +3,19 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.amnezia.awg.backend;
+package io.routedns.vpn.backend;
 
 import android.content.Context;
 import android.util.Log;
 import android.util.Pair;
 
-import org.amnezia.awg.backend.BackendException.Reason;
-import org.amnezia.awg.backend.Tunnel.State;
-import org.amnezia.awg.util.RootShell;
-import org.amnezia.awg.util.ToolsInstaller;
-import org.amnezia.awg.config.Config;
-import org.amnezia.awg.crypto.Key;
-import org.amnezia.awg.util.NonNullForAll;
+import io.routedns.vpn.backend.BackendException.Reason;
+import io.routedns.vpn.backend.Tunnel.State;
+import io.routedns.vpn.util.RootShell;
+import io.routedns.vpn.util.ToolsInstaller;
+import io.routedns.vpn.config.Config;
+import io.routedns.vpn.crypto.Key;
+import io.routedns.vpn.util.NonNullForAll;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -35,12 +35,12 @@ import androidx.annotation.Nullable;
 
 /**
  * Implementation of {@link Backend} that uses the kernel module and {@code awg-quick} to provide
- * AmneziaWG tunnels.
+ * RouteVPN tunnels.
  */
 
 @NonNullForAll
 public final class AwgQuickBackend implements Backend {
-    private static final String TAG = "AmneziaWG/AwgQuickBackend";
+    private static final String TAG = "RouteVPN/AwgQuickBackend";
     private final File localTemporaryDir;
     private final RootShell rootShell;
     private final Map<Tunnel, Config> runningConfigs = new HashMap<>();

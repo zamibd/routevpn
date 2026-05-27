@@ -2,7 +2,7 @@
  * Copyright © 2017-2023 WireGuard LLC. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.amnezia.awg.activity
+package io.routedns.vpn.activity
 
 import android.content.Intent
 import android.os.Build
@@ -16,15 +16,15 @@ import androidx.fragment.app.commit
 import androidx.lifecycle.lifecycleScope
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
-import org.amnezia.awg.Application
-import org.amnezia.awg.QuickTileService
-import org.amnezia.awg.R
-import org.amnezia.awg.backend.AwgQuickBackend
-import org.amnezia.awg.backend.RootGoBackend
-import org.amnezia.awg.backend.Tunnel
-import org.amnezia.awg.preference.PreferencesPreferenceDataStore
-import org.amnezia.awg.util.AdminKnobs
-import org.amnezia.awg.util.UserKnobs
+import io.routedns.vpn.Application
+import io.routedns.vpn.QuickTileService
+import io.routedns.vpn.R
+import io.routedns.vpn.backend.AwgQuickBackend
+import io.routedns.vpn.backend.RootGoBackend
+import io.routedns.vpn.backend.Tunnel
+import io.routedns.vpn.preference.PreferencesPreferenceDataStore
+import io.routedns.vpn.util.AdminKnobs
+import io.routedns.vpn.util.UserKnobs
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.util.Log
@@ -92,12 +92,12 @@ class SettingsActivity : AppCompatActivity() {
                         try {
                             manager.setTunnelState(tunnel, Tunnel.State.DOWN)
                         } catch (e: Throwable) {
-                            Log.w("AmneziaWG/Settings", "Failed to stop tunnel ${tunnel.name}", e)
+                            Log.w("RouteVPN/Settings", "Failed to stop tunnel ${tunnel.name}", e)
                         }
                     }
                 }
             } catch (e: Throwable) {
-                Log.w("AmneziaWG/Settings", "Failed to shut down tunnels before restart", e)
+                Log.w("RouteVPN/Settings", "Failed to shut down tunnels before restart", e)
             }
             restartApp()
         }
@@ -109,7 +109,7 @@ class SettingsActivity : AppCompatActivity() {
                 intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK)
                 Application.get().startActivity(intent)
             } catch (e: Throwable) {
-                Log.w("AmneziaWG/Settings", "Restart failed", e)
+                Log.w("RouteVPN/Settings", "Restart failed", e)
             }
             Runtime.getRuntime().exit(0)
         }
@@ -200,7 +200,7 @@ class SettingsActivity : AppCompatActivity() {
                             withContext(Dispatchers.IO) { Application.getRootShell().start() }
                             true
                         } catch (e: Throwable) {
-                            Log.e("AmneziaWG/Settings", "Root check failed", e)
+                            Log.e("RouteVPN/Settings", "Root check failed", e)
                             false
                         }
                         if (!rootAvailable) {
@@ -252,7 +252,7 @@ class SettingsActivity : AppCompatActivity() {
                         UserKnobs.setEnableProcessProtection(enable)
                         processProtPref.isChecked = enable
                     } catch (e: Throwable) {
-                        Log.e("AmneziaWG/Settings", "Process protection failed", e)
+                        Log.e("RouteVPN/Settings", "Process protection failed", e)
                         processProtPref.isChecked = !enable
                         Toast.makeText(requireContext(), R.string.process_protection_error, Toast.LENGTH_SHORT).show()
                     }

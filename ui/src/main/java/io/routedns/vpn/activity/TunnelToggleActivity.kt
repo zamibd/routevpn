@@ -2,7 +2,7 @@
  * Copyright © 2017-2023 WireGuard LLC. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.amnezia.awg.activity
+package io.routedns.vpn.activity
 
 import android.content.ComponentName
 import android.os.Build
@@ -13,12 +13,12 @@ import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
-import org.amnezia.awg.Application
-import org.amnezia.awg.QuickTileService
-import org.amnezia.awg.R
-import org.amnezia.awg.backend.GoBackend
-import org.amnezia.awg.backend.Tunnel
-import org.amnezia.awg.util.ErrorMessages
+import io.routedns.vpn.Application
+import io.routedns.vpn.QuickTileService
+import io.routedns.vpn.R
+import io.routedns.vpn.backend.GoBackend
+import io.routedns.vpn.backend.Tunnel
+import io.routedns.vpn.util.ErrorMessages
 import kotlinx.coroutines.launch
 
 class TunnelToggleActivity : AppCompatActivity() {
@@ -64,6 +64,6 @@ class TunnelToggleActivity : AppCompatActivity() {
     }
 
     companion object {
-        private const val TAG = "AmneziaWG/TunnelToggleActivity"
+        private const val TAG = "RouteVPN/TunnelToggleActivity"
     }
 }

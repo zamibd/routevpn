@@ -2,21 +2,21 @@
  * Copyright © 2017-2023 WireGuard LLC. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.amnezia.awg.preference
+package io.routedns.vpn.preference
 
 import android.content.Context
 import android.util.AttributeSet
 import android.util.Log
 import androidx.preference.Preference
 import com.google.android.material.snackbar.Snackbar
-import org.amnezia.awg.Application
-import org.amnezia.awg.R
-import org.amnezia.awg.util.AdminKnobs
-import org.amnezia.awg.util.BiometricAuthenticator
-import org.amnezia.awg.util.DownloadsFileSaver
-import org.amnezia.awg.util.ErrorMessages
-import org.amnezia.awg.util.activity
-import org.amnezia.awg.util.lifecycleScope
+import io.routedns.vpn.Application
+import io.routedns.vpn.R
+import io.routedns.vpn.util.AdminKnobs
+import io.routedns.vpn.util.BiometricAuthenticator
+import io.routedns.vpn.util.DownloadsFileSaver
+import io.routedns.vpn.util.ErrorMessages
+import io.routedns.vpn.util.activity
+import io.routedns.vpn.util.lifecycleScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.async
@@ -43,7 +43,7 @@ class ZipExporterPreference(context: Context, attrs: AttributeSet?) : Preference
                     if (configs.isEmpty()) {
                         throw IllegalArgumentException(context.getString(R.string.no_tunnels_error))
                     }
-                    val outputFile = downloadsFileSaver.save("amneziawg-export.zip", "application/zip", true)
+                    val outputFile = downloadsFileSaver.save("routevpn-export.zip", "application/zip", true)
                     if (outputFile == null) {
                         withContext(Dispatchers.Main.immediate) {
                             isEnabled = true
@@ -108,6 +108,6 @@ class ZipExporterPreference(context: Context, attrs: AttributeSet?) : Preference
     }
 
     companion object {
-        private const val TAG = "AmneziaWG/ZipExporterPreference"
+        private const val TAG = "RouteVPN/ZipExporterPreference"
     }
 }

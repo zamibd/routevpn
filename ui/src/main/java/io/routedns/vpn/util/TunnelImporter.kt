@@ -3,18 +3,18 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.amnezia.awg.util
+package io.routedns.vpn.util
 
 import android.content.ContentResolver
 import android.net.Uri
 import android.provider.OpenableColumns
 import android.util.Log
 import androidx.fragment.app.FragmentManager
-import org.amnezia.awg.Application
-import org.amnezia.awg.R
-import org.amnezia.awg.fragment.ConfigNamingDialogFragment
-import org.amnezia.awg.model.ObservableTunnel
-import org.amnezia.awg.config.Config
+import io.routedns.vpn.Application
+import io.routedns.vpn.R
+import io.routedns.vpn.fragment.ConfigNamingDialogFragment
+import io.routedns.vpn.model.ObservableTunnel
+import io.routedns.vpn.config.Config
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -148,5 +148,5 @@ object TunnelImporter {
         messageCallback(message)
     }
 
-    private const val TAG = "AmneziaWG/TunnelImporter"
+    private const val TAG = "RouteVPN/TunnelImporter"
 }

@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.amnezia.awg.backend;
+package io.routedns.vpn.backend;
 
 import android.content.Context;
 import android.content.Intent;
@@ -12,16 +12,16 @@ import android.os.ParcelFileDescriptor;
 import android.system.OsConstants;
 import android.util.Log;
 
-import org.amnezia.awg.backend.BackendException.Reason;
-import org.amnezia.awg.backend.Tunnel.State;
-import org.amnezia.awg.util.SharedLibraryLoader;
-import org.amnezia.awg.config.Config;
-import org.amnezia.awg.config.InetEndpoint;
-import org.amnezia.awg.config.InetNetwork;
-import org.amnezia.awg.config.Peer;
-import org.amnezia.awg.crypto.Key;
-import org.amnezia.awg.crypto.KeyFormatException;
-import org.amnezia.awg.util.NonNullForAll;
+import io.routedns.vpn.backend.BackendException.Reason;
+import io.routedns.vpn.backend.Tunnel.State;
+import io.routedns.vpn.util.SharedLibraryLoader;
+import io.routedns.vpn.config.Config;
+import io.routedns.vpn.config.InetEndpoint;
+import io.routedns.vpn.config.InetNetwork;
+import io.routedns.vpn.config.Peer;
+import io.routedns.vpn.crypto.Key;
+import io.routedns.vpn.crypto.KeyFormatException;
+import io.routedns.vpn.util.NonNullForAll;
 
 import java.net.InetAddress;
 import java.util.Collections;
@@ -35,16 +35,16 @@ import java.util.concurrent.TimeoutException;
 import androidx.annotation.Nullable;
 import androidx.collection.ArraySet;
 
-import static org.amnezia.awg.GoBackend.*;
+import static io.routedns.vpn.GoBackend.*;
 
 /**
- * Implementation of {@link Backend} that uses the amneziawg-go userspace implementation to provide
- * AmneziaWG tunnels.
+ * Implementation of {@link Backend} that uses the AmneziaWG userspace implementation to provide
+ * RouteVPN tunnels.
  */
 @NonNullForAll
 public final class GoBackend implements Backend {
     private static final int DNS_RESOLUTION_RETRIES = 10;
-    private static final String TAG = "AmneziaWG/GoBackend";
+    private static final String TAG = "RouteVPN/GoBackend";
     @Nullable private static AlwaysOnCallback alwaysOnCallback;
     private static GhettoCompletableFuture<VpnService> vpnService = new GhettoCompletableFuture<>();
     private final Context context;
@@ -274,9 +274,9 @@ public final class GoBackend implements Backend {
     }
 
     /**
-     * Get the version of the underlying amneziawg-go library.
+     * Get the version of the underlying AmneziaWG userspace library.
      *
-     * @return {@link String} value of the version of the amneziawg-go library.
+     * @return {@link String} value of the version of the AmneziaWG userspace library.
      */
     @Override
     public String getVersion() {

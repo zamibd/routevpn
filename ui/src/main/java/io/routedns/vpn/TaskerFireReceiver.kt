@@ -1,18 +1,18 @@
 /*
- * Copyright © 2024 AmneziaWG. All Rights Reserved.
+ * Copyright © 2024 RouteVPN. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.amnezia.awg
+package io.routedns.vpn
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.util.Log
 import android.widget.Toast
-import org.amnezia.awg.activity.TaskerEditActivity
-import org.amnezia.awg.backend.Tunnel
-import org.amnezia.awg.util.ErrorMessages
-import org.amnezia.awg.util.UserKnobs
+import io.routedns.vpn.activity.TaskerEditActivity
+import io.routedns.vpn.backend.Tunnel
+import io.routedns.vpn.util.ErrorMessages
+import io.routedns.vpn.util.UserKnobs
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
@@ -69,7 +69,7 @@ class TaskerFireReceiver : BroadcastReceiver() {
     }
 
     companion object {
-        private const val TAG = "AmneziaWG/Tasker"
+        private const val TAG = "RouteVPN/Tasker"
         private const val ACTION_FIRE_SETTING = "com.twofortyfouram.locale.intent.action.FIRE_SETTING"
     }
 }

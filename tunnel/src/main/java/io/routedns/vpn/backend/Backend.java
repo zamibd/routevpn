@@ -3,17 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.amnezia.awg.backend;
+package io.routedns.vpn.backend;
 
-import org.amnezia.awg.config.Config;
-import org.amnezia.awg.util.NonNullForAll;
+import io.routedns.vpn.config.Config;
+import io.routedns.vpn.util.NonNullForAll;
 
 import java.util.Set;
 
 import androidx.annotation.Nullable;
 
 /**
- * Interface for implementations of the AmneziaWG secure network tunnel.
+ * Interface for implementations of the RouteVPN secure network tunnel.
  */
 
 @NonNullForAll

@@ -2,7 +2,7 @@
  * Copyright © 2017-2023 WireGuard LLC. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.amnezia.awg.viewmodel
+package io.routedns.vpn.viewmodel
 
 import android.os.Build
 import android.os.Parcel
@@ -10,9 +10,9 @@ import android.os.Parcelable
 import androidx.core.os.ParcelCompat
 import androidx.databinding.ObservableArrayList
 import androidx.databinding.ObservableList
-import org.amnezia.awg.config.BadConfigException
-import org.amnezia.awg.config.Config
-import org.amnezia.awg.config.Peer
+import io.routedns.vpn.config.BadConfigException
+import io.routedns.vpn.config.Config
+import io.routedns.vpn.config.Peer
 
 class ConfigProxy : Parcelable {
     val `interface`: InterfaceProxy

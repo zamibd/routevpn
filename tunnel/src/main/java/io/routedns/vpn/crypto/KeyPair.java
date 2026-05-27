@@ -3,12 +3,12 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.amnezia.awg.crypto;
+package io.routedns.vpn.crypto;
 
-import org.amnezia.awg.util.NonNullForAll;
+import io.routedns.vpn.util.NonNullForAll;
 
 /**
- * Represents a Curve25519 key pair as used by AmneziaWG.
+ * Represents a Curve25519 key pair as used by RouteVPN.
  * <p>
  * Instances of this class are immutable.
  */

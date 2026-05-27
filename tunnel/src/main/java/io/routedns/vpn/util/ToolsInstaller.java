@@ -3,14 +3,14 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.amnezia.awg.util;
+package io.routedns.vpn.util;
 
 import android.content.Context;
 import android.system.OsConstants;
 import android.util.Log;
 
-import org.amnezia.awg.util.RootShell.RootShellException;
-import org.amnezia.awg.util.NonNullForAll;
+import io.routedns.vpn.util.RootShell.RootShellException;
+import io.routedns.vpn.util.NonNullForAll;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -23,7 +23,7 @@ import androidx.annotation.RestrictTo;
 import androidx.annotation.RestrictTo.Scope;
 
 /**
- * Helper to install AmneziaWG tools to the system partition.
+ * Helper to install RouteVPN tools to the system partition.
  */
 
 @NonNullForAll
@@ -39,7 +39,7 @@ public final class ToolsInstaller {
             new File("/system/bin"),
     };
     @Nullable private static final File INSTALL_DIR = getInstallDir();
-    private static final String TAG = "AmneziaWG/ToolsInstaller";
+    private static final String TAG = "RouteVPN/ToolsInstaller";
 
     private final Context context;
     private final File localBinaryDir;
@@ -134,8 +134,8 @@ public final class ToolsInstaller {
 
     @RestrictTo(Scope.LIBRARY_GROUP)
     public int install() throws RootShellException, IOException {
-        if (!context.getPackageName().startsWith("org.amnezia."))
-            throw new SecurityException("The tools may only be installed system-wide from the main AmneziaWG app.");
+        if (!context.getPackageName().startsWith("io.routedns."))
+            throw new SecurityException("The tools may only be installed system-wide from the main RouteDNS VPN app.");
         return willInstallAsMagiskModule() ? installMagisk() : installSystem();
     }
 
@@ -143,12 +143,12 @@ public final class ToolsInstaller {
         extract();
         final StringBuilder script = new StringBuilder("set -ex; ");
 
-        script.append("trap 'rm -rf /data/adb/modules/amneziawg' INT TERM EXIT; ");
-        script.append(String.format("rm -rf /data/adb/modules/amneziawg/; mkdir -p /data/adb/modules/amneziawg%s; ", INSTALL_DIR));
-        script.append("printf 'id=amneziawg\nname=AmneziaWG Command Line Tools\nversion=1.0\nversionCode=1\nauthor=amnezia\ndescription=Command line tools for AmneziaWG\nminMagisk=1500\n' > /data/adb/modules/amneziawg/module.prop; ");
-        script.append("touch /data/adb/modules/amneziawg/auto_mount; ");
+        script.append("trap 'rm -rf /data/adb/modules/routevpn' INT TERM EXIT; ");
+        script.append(String.format("rm -rf /data/adb/modules/routevpn/; mkdir -p /data/adb/modules/routevpn%s; ", INSTALL_DIR));
+        script.append("printf 'id=routevpn\nname=RouteVPN Command Line Tools\nversion=1.0\nversionCode=1\nauthor=routedns\ndescription=Command line tools for RouteVPN\nminMagisk=1500\n' > /data/adb/modules/routevpn/module.prop; ");
+        script.append("touch /data/adb/modules/routevpn/auto_mount; ");
         for (final String name : EXECUTABLES) {
-            final File destination = new File("/data/adb/modules/amneziawg" + INSTALL_DIR, name);
+            final File destination = new File("/data/adb/modules/routevpn" + INSTALL_DIR, name);
             script.append(String.format("cp '%s' '%s'; chmod 755 '%s'; chcon 'u:object_r:system_file:s0' '%s' || true; ",
                     new File(localBinaryDir, name), destination, destination, destination));
         }

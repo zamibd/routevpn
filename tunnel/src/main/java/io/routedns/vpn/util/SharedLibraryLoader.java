@@ -3,13 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.amnezia.awg.util;
+package io.routedns.vpn.util;
 
 import android.content.Context;
 import android.os.Build;
 import android.util.Log;
 
-import org.amnezia.awg.util.NonNullForAll;
+import io.routedns.vpn.util.NonNullForAll;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -27,7 +27,7 @@ import androidx.annotation.RestrictTo.Scope;
 @NonNullForAll
 @RestrictTo(Scope.LIBRARY_GROUP)
 public final class SharedLibraryLoader {
-    private static final String TAG = "AmneziaWG/SharedLibraryLoader";
+    private static final String TAG = "RouteVPN/SharedLibraryLoader";
 
     private SharedLibraryLoader() {
     }

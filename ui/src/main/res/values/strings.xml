@@ -63,7 +63,7 @@
     <string name="allow_remote_control_intents_summary_on">External apps may toggle tunnels via intents (advanced)</string>
     <string name="allow_remote_control_intents_title">Allow remote intents</string>
     <string name="allowed_ips">Allowed IPs</string>
-    <string name="app_name" translatable="false">AmneziaWG+</string>
+    <string name="app_name" translatable="false">RouteVPN</string>
     <string name="bad_config_context">%1$s\'s %2$s</string>
     <string name="bad_config_context_top_level">%s</string>
     <string name="bad_config_error">%1$s in %2$s</string>
@@ -90,7 +90,7 @@
     <string name="config_rename_error">Cannot rename configuration file “%s”</string>
     <string name="config_save_error">Cannot save configuration for “%1$s”: %2$s</string>
     <string name="config_save_success">Successfully saved configuration for “%s”</string>
-    <string name="create_activity_title">Create AmneziaWG Tunnel</string>
+    <string name="create_activity_title">Create RouteVPN Tunnel</string>
     <string name="create_bin_dir_error">Cannot create local binary directory</string>
     <string name="create_downloads_file_error">Cannot create file in downloads directory</string>
     <string name="create_empty">Create from scratch</string>
@@ -140,9 +140,9 @@
     <string name="interface_title">Interface</string>
     <string name="key_contents_error">Bad characters in key</string>
     <string name="key_length_error">Incorrect key length</string>
-    <string name="key_length_explanation_base64">: AmneziaWG base64 keys must be 44 characters (32 bytes)</string>
-    <string name="key_length_explanation_binary">: AmneziaWG keys must be 32 bytes</string>
-    <string name="key_length_explanation_hex">: AmneziaWG hex keys must be 64 characters (32 bytes)</string>
+    <string name="key_length_explanation_base64">: RouteVPN base64 keys must be 44 characters (32 bytes)</string>
+    <string name="key_length_explanation_binary">: RouteVPN keys must be 32 bytes</string>
+    <string name="key_length_explanation_hex">: RouteVPN hex keys must be 64 characters (32 bytes)</string>
     <string name="latest_handshake">Latest handshake</string>
     <string name="latest_handshake_ago">%s ago</string>
     <string name="latest_handshake_now">now</string>
@@ -152,7 +152,7 @@
     <string name="duration_seconds">%ds</string>
     <string name="listen_port">Listen port</string>
     <string name="log_export_error">Unable to export log: %s</string>
-    <string name="log_export_subject">AmneziaWG Android Log File</string>
+    <string name="log_export_subject">RouteVPN Android Log File</string>
     <string name="log_export_success">Saved to “%s”</string>
     <string name="log_export_title">Export log file</string>
     <string name="log_saver_activity_label">Save log</string>
@@ -201,8 +201,8 @@
     <string name="parse_error_integer">number</string>
     <string name="parse_error_reason">Cannot parse %1$s “%2$s”</string>
     <string name="peer">Peer</string>
-    <string name="permission_description">control AmneziaWG tunnels, enabling and disabling tunnels at will, potentially misdirecting Internet traffic</string>
-    <string name="permission_label">control AmneziaWG tunnels</string>
+    <string name="permission_description">control RouteVPN tunnels, enabling and disabling tunnels at will, potentially misdirecting Internet traffic</string>
+    <string name="permission_label">control RouteVPN tunnels</string>
     <string name="persistent_keepalive">Persistent keepalive</string>
     <string name="pre_shared_key">Pre-shared key</string>
     <string name="pre_shared_key_enabled">enabled</string>
@@ -224,7 +224,7 @@
     <string name="shell_start_error">Shell failed to start: %d</string>
     <string name="success_application_will_restart">Success. The application will now restart…</string>
     <string name="toggle_all">Toggle All</string>
-    <string name="toggle_error">Error toggling AmneziaWG tunnel: %s</string>
+    <string name="toggle_error">Error toggling RouteVPN tunnel: %s</string>
     <string name="tools_installer_already">awg and awg-quick are already installed</string>
     <string name="tools_installer_failure">Unable to install command-line tools (no root?)</string>
     <string name="tools_installer_initial">Install optional tools for scripting</string>
@@ -260,7 +260,7 @@
     <string name="version_summary">%1$s backend %2$s</string>
     <string name="version_summary_checking">Checking %s backend version</string>
     <string name="version_summary_unknown">Unknown %s version</string>
-    <string name="version_title">AmneziaWG+ for Android v%s</string>
+    <string name="version_title">RouteVPN for Android v%s</string>
     <string name="vpn_not_authorized_error">VPN service not authorized by user</string>
     <string name="vpn_start_error">Unable to start Android VPN service</string>
     <string name="zip_export_error">Unable to export tunnels: %s</string>
@@ -283,7 +283,7 @@
     <string name="allow_tasker_plugin_summary_off">Tasker and similar automation apps cannot control tunnels</string>
     <string name="allow_tasker_plugin_summary_on">Tasker and similar automation apps can control tunnels</string>
     <string name="allow_tasker_plugin_title">Allow Tasker plugin</string>
-    <string name="tasker_plugin_title">AmneziaWG Tunnel Control</string>
+    <string name="tasker_plugin_title">RouteVPN Tunnel Control</string>
     <string name="tasker_select_tunnel">Tunnel</string>
     <string name="tasker_select_action">Action</string>
     <string name="tasker_action_up">Turn on</string>
@@ -298,7 +298,7 @@
     <string name="process_protection_summary_off">Process is not protected from being killed by the system</string>
     <string name="process_protection_summary_on">Process is protected from being killed (low OOM priority)</string>
     <string name="process_protection_error">Failed to apply process protection</string>
-    <string name="root_tunnel_notification_channel">AmneziaWG+ Root Tunnel</string>
+    <string name="root_tunnel_notification_channel">RouteVPN Root Tunnel</string>
     <string name="root_tunnel_notification_connected">Connected</string>
     <string name="root_tunnel_notification_connecting">Connecting\u2026</string>
     <string name="root_tunnel_notification_cleanup">Cleaning up\u2026</string>

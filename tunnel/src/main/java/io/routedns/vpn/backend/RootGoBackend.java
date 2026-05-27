@@ -1,9 +1,9 @@
 /*
- * Copyright © 2024 AmneziaWG. All Rights Reserved.
+ * Copyright © 2024 RouteVPN. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.amnezia.awg.backend;
+package io.routedns.vpn.backend;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,17 +14,17 @@ import android.net.NetworkRequest;
 import android.os.Build;
 import android.util.Log;
 
-import org.amnezia.awg.backend.BackendException.Reason;
-import org.amnezia.awg.backend.Tunnel.State;
-import org.amnezia.awg.config.Config;
-import org.amnezia.awg.config.InetEndpoint;
-import org.amnezia.awg.config.InetNetwork;
-import org.amnezia.awg.config.Peer;
-import org.amnezia.awg.crypto.Key;
-import org.amnezia.awg.crypto.KeyFormatException;
-import org.amnezia.awg.util.NonNullForAll;
-import org.amnezia.awg.util.RootShell;
-import org.amnezia.awg.util.SharedLibraryLoader;
+import io.routedns.vpn.backend.BackendException.Reason;
+import io.routedns.vpn.backend.Tunnel.State;
+import io.routedns.vpn.config.Config;
+import io.routedns.vpn.config.InetEndpoint;
+import io.routedns.vpn.config.InetNetwork;
+import io.routedns.vpn.config.Peer;
+import io.routedns.vpn.crypto.Key;
+import io.routedns.vpn.crypto.KeyFormatException;
+import io.routedns.vpn.util.NonNullForAll;
+import io.routedns.vpn.util.RootShell;
+import io.routedns.vpn.util.SharedLibraryLoader;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -35,8 +35,8 @@ import java.util.Set;
 import androidx.annotation.Nullable;
 import androidx.collection.ArraySet;
 
-import static org.amnezia.awg.GoBackend.*;
-import static org.amnezia.awg.backend.RootNetworkManager.TUN_INTERFACE;
+import static io.routedns.vpn.GoBackend.*;
+import static io.routedns.vpn.backend.RootNetworkManager.TUN_INTERFACE;
 
 /**
  * {@link Backend} implementation that uses root access to create a TUN interface
@@ -45,9 +45,9 @@ import static org.amnezia.awg.backend.RootNetworkManager.TUN_INTERFACE;
 @NonNullForAll
 public final class RootGoBackend implements Backend {
     private static final int DNS_RESOLUTION_RETRIES = 10;
-    private static final String TAG = "AmneziaWG/RootGoBackend";
+    private static final String TAG = "RouteVPN/RootGoBackend";
     private static final long TURN_OFF_TIMEOUT_MS = 5000;
-    static final String NOTIFICATION_CHANNEL_ID = "amneziawg_root_tunnel";
+    static final String NOTIFICATION_CHANNEL_ID = "routevpn_root_tunnel";
     static final int NOTIFICATION_ID = 51820;
     static final String EXTRA_TUNNEL_NAME = "tunnel_name";
     static final String EXTRA_CONNECTED = "connected";
@@ -448,7 +448,7 @@ public final class RootGoBackend implements Backend {
                 runRootCommandStrict("ip link set " + TUN_INTERFACE + " mtu " + mtu);
                 runRootCommandStrict("ip link set " + TUN_INTERFACE + " up");
 
-                // Start amneziawg-go
+                // Start AmneziaWG userspace backend
                 // Go takes fd ownership on awgTurnOn and closes it on error,
                 // so we reset tunFd BEFORE the call to avoid double close
                 final int fd = tunFd;

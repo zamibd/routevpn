@@ -1,9 +1,9 @@
-# AmneziaWG+
+# RouteVPN
 
-Android GUI for [AmneziaWG](https://docs.amnezia.org/documentation/amnezia-wg/)
+Android client for [AmneziaWG](https://docs.amnezia.org/documentation/amnezia-wg/) tunnels. Package ID: `io.routedns.vpn`.
 
 > [!NOTE]
-> This is a fork of the original [amneziawg-android](https://github.com/amnezia-vpn/amneziawg-android) with additional features listed below. For the upstream version, please visit the [original repository](https://github.com/amnezia-vpn/amneziawg-android).
+> Based on [amneziawg-android](https://github.com/amnezia-vpn/amneziawg-android) with additional features listed below.
 
 ## ✨ Additional features
 
@@ -26,7 +26,7 @@ Requires **"Allow Tasker plugin"** to be enabled in settings.
 
 The app registers as a [Tasker](https://tasker.joaoapps.com/) action plugin:
 
-1. In Tasker: **Task → Add Action → Plugin → AmneziaWG Tunnel Control**
+1. In Tasker: **Task → Add Action → Plugin → RouteVPN Tunnel Control**
 2. Tap the pencil icon to configure
 3. Select a tunnel and action (**Turn on** / **Turn off** / **Toggle**)
 4. Tap **Save**
@@ -41,24 +41,24 @@ External apps can control tunnels via broadcast intents. Authentication is done 
 
 | Action | Extras | Description |
 |--------|--------|-------------|
-| `org.amnezia.awg.action.SET_TUNNEL_UP` | `tunnel` (String), `token` (String) | Bring tunnel up |
-| `org.amnezia.awg.action.SET_TUNNEL_DOWN` | `tunnel` (String), `token` (String) | Bring tunnel down |
-| `org.amnezia.awg.action.REFRESH_TUNNEL_STATES` | — | Refresh all tunnel states (always available, no token needed) |
+| `io.routedns.vpn.action.SET_TUNNEL_UP` | `tunnel` (String), `token` (String) | Bring tunnel up |
+| `io.routedns.vpn.action.SET_TUNNEL_DOWN` | `tunnel` (String), `token` (String) | Bring tunnel down |
+| `io.routedns.vpn.action.REFRESH_TUNNEL_STATES` | — | Refresh all tunnel states (always available, no token needed) |
 
 Example using `adb`:
 
 ```bash
-adb shell am broadcast -a org.amnezia.awg.action.SET_TUNNEL_UP \
+adb shell am broadcast -a io.routedns.vpn.action.SET_TUNNEL_UP \
   -e tunnel "my-tunnel" \
   -e token "AbCdEf1234" \
-  -n org.amnezia.awg/.model.TunnelManager\$IntentReceiver
+  -n io.routedns.vpn/.model.TunnelManager\$IntentReceiver
 ```
 
 ## 🔨 Building
 
 ```
-$ git clone --recurse-submodules https://github.com/Gruven/amneziawg-android
-$ cd amneziawg-android
+$ git clone --recurse-submodules https://github.com/zamibd/routevpn
+$ cd routevpn
 $ ./gradlew assembleRelease
 ```
 
@@ -66,20 +66,13 @@ macOS users may need [flock(1)](https://github.com/discoteq/flock).
 
 ## 🐛 Issues
 
-Issues are welcome as long as they relate to the [additional features](#-additional-features) of this fork (AmneziaWG+). If you encounter a bug of the original application (AmneziaWG), please open an issue in the [upstream repository](https://github.com/amnezia-vpn/amneziawg-android/issues).
+Open issues in this repository for RouteVPN-specific bugs and feature requests.
 
 ## 🤝 Contributing
 
-PRs are welcome — bug fixes, documentation improvements, refactoring. The exception is new features: please open a [feature request](https://github.com/Gruven/amneziawg-android/issues) first to discuss the idea before starting work.
-
-## 👀 But why?..
-
-This project primarily aims to support devices that, for whatever reason, are still running older versions of Android. In my case, it's the head unit in my 2021 car, which runs Android 5.1 with the VPN API stripped out.
-
-But! This project also includes quality-of-life features that make it worth using on modern devices too (which I do on my phone).
+PRs are welcome — bug fixes, documentation improvements, refactoring.
 
 ## ⭐️ Alternatives
 
-If the extra features of this project don't interest you, consider these alternatives:
-- [AmneziaWG](https://github.com/amnezia-vpn/amneziawg-android) (Android 7+) — the original app.
-- [WG Tunnel](https://github.com/wgtunnel/android) (Android 8+) — an excellent alternative WG/AWG client with many additional features and a polished UI.
+- [AmneziaWG](https://github.com/amnezia-vpn/amneziawg-android) (Android 7+) — upstream app.
+- [WG Tunnel](https://github.com/wgtunnel/android) (Android 8+) — alternative WG/AWG client.

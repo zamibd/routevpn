@@ -2,15 +2,15 @@
  * Copyright © 2017-2023 WireGuard LLC. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.amnezia.awg.widget
+package io.routedns.vpn.widget
 
 import android.text.InputFilter
 import android.text.SpannableStringBuilder
 import android.text.Spanned
-import org.amnezia.awg.backend.Tunnel
+import io.routedns.vpn.backend.Tunnel
 
 /**
- * InputFilter for entering AmneziaWG configuration names (Linux interface names).
+ * InputFilter for entering RouteVPN configuration names (Linux interface names).
  */
 class NameInputFilter : InputFilter {
     override fun filter(

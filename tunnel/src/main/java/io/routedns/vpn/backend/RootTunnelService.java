@@ -1,9 +1,9 @@
 /*
- * Copyright © 2024 AmneziaWG. All Rights Reserved.
+ * Copyright © 2024 RouteVPN. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
 
-package org.amnezia.awg.backend;
+package io.routedns.vpn.backend;
 
 import android.annotation.SuppressLint;
 import android.app.Notification;
@@ -18,8 +18,8 @@ import android.os.Build;
 import android.os.IBinder;
 import android.util.Log;
 
-import org.amnezia.awg.util.NonNullForAll;
-import org.amnezia.awg.util.RootShell;
+import io.routedns.vpn.util.NonNullForAll;
+import io.routedns.vpn.util.RootShell;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -29,12 +29,12 @@ import java.util.List;
 
 import androidx.annotation.Nullable;
 
-import static org.amnezia.awg.backend.RootGoBackend.EXTRA_CONNECTED;
-import static org.amnezia.awg.backend.RootGoBackend.EXTRA_TUNNEL_NAME;
-import static org.amnezia.awg.backend.RootGoBackend.NOTIFICATION_CHANNEL_ID;
-import static org.amnezia.awg.backend.RootGoBackend.NOTIFICATION_ID;
-import static org.amnezia.awg.backend.RootNetworkManager.ENDPOINT_IPS_FILE;
-import static org.amnezia.awg.backend.RootNetworkManager.SYSCTL_FILE;
+import static io.routedns.vpn.backend.RootGoBackend.EXTRA_CONNECTED;
+import static io.routedns.vpn.backend.RootGoBackend.EXTRA_TUNNEL_NAME;
+import static io.routedns.vpn.backend.RootGoBackend.NOTIFICATION_CHANNEL_ID;
+import static io.routedns.vpn.backend.RootGoBackend.NOTIFICATION_ID;
+import static io.routedns.vpn.backend.RootNetworkManager.ENDPOINT_IPS_FILE;
+import static io.routedns.vpn.backend.RootNetworkManager.SYSCTL_FILE;
 
 /**
  * Foreground service that keeps the app process alive while root tunnel is active.
@@ -44,7 +44,7 @@ import static org.amnezia.awg.backend.RootNetworkManager.SYSCTL_FILE;
  */
 @NonNullForAll
 public class RootTunnelService extends Service {
-    private static final String TAG = "AmneziaWG/RootGoBackend";
+    private static final String TAG = "RouteVPN/RootGoBackend";
 
     @Override
     public int onStartCommand(@Nullable final Intent intent, final int flags, final int startId) {
@@ -81,7 +81,7 @@ public class RootTunnelService extends Service {
             if (nm != null && nm.getNotificationChannel(NOTIFICATION_CHANNEL_ID) == null) {
                 final NotificationChannel channel = new NotificationChannel(
                         NOTIFICATION_CHANNEL_ID,
-                        getLocalizedString("root_tunnel_notification_channel", "AmneziaWG+ Root Tunnel"),
+                        getLocalizedString("root_tunnel_notification_channel", "RouteVPN Root Tunnel"),
                         NotificationManager.IMPORTANCE_LOW);
                 channel.setShowBadge(false);
                 nm.createNotificationChannel(channel);

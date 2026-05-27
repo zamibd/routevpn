@@ -2,7 +2,7 @@
  * Copyright © 2017-2023 WireGuard LLC. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.amnezia.awg.fragment
+package io.routedns.vpn.fragment
 
 import android.content.Context
 import android.os.Bundle
@@ -23,21 +23,21 @@ import androidx.core.view.MenuProvider
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.snackbar.Snackbar
-import org.amnezia.awg.Application
-import org.amnezia.awg.R
-import org.amnezia.awg.backend.RootGoBackend
-import org.amnezia.awg.backend.Tunnel
-import org.amnezia.awg.databinding.TunnelEditorFragmentBinding
-import org.amnezia.awg.model.ObservableTunnel
-import org.amnezia.awg.util.AdminKnobs
-import org.amnezia.awg.util.BiometricAuthenticator
-import org.amnezia.awg.util.ErrorMessages
-import org.amnezia.awg.viewmodel.ConfigProxy
-import org.amnezia.awg.config.Config
+import io.routedns.vpn.Application
+import io.routedns.vpn.R
+import io.routedns.vpn.backend.RootGoBackend
+import io.routedns.vpn.backend.Tunnel
+import io.routedns.vpn.databinding.TunnelEditorFragmentBinding
+import io.routedns.vpn.model.ObservableTunnel
+import io.routedns.vpn.util.AdminKnobs
+import io.routedns.vpn.util.BiometricAuthenticator
+import io.routedns.vpn.util.ErrorMessages
+import io.routedns.vpn.viewmodel.ConfigProxy
+import io.routedns.vpn.config.Config
 import kotlinx.coroutines.launch
 
 /**
- * Fragment for editing an AmneziaWG configuration.
+ * Fragment for editing an RouteVPN configuration.
  */
 class TunnelEditorFragment : BaseFragment(), MenuProvider {
     private var haveShownKeys = false
@@ -335,6 +335,6 @@ class TunnelEditorFragment : BaseFragment(), MenuProvider {
     companion object {
         private const val KEY_LOCAL_CONFIG = "local_config"
         private const val KEY_ORIGINAL_NAME = "original_name"
-        private const val TAG = "AmneziaWG/TunnelEditorFragment"
+        private const val TAG = "RouteVPN/TunnelEditorFragment"
     }
 }

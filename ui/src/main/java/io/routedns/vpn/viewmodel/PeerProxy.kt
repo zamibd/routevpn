@@ -2,7 +2,7 @@
  * Copyright © 2017-2023 WireGuard LLC. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.amnezia.awg.viewmodel
+package io.routedns.vpn.viewmodel
 
 import android.os.Parcel
 import android.os.Parcelable
@@ -11,10 +11,10 @@ import androidx.databinding.Bindable
 import androidx.databinding.Observable
 import androidx.databinding.Observable.OnPropertyChangedCallback
 import androidx.databinding.ObservableList
-import org.amnezia.awg.BR
-import org.amnezia.awg.config.Attribute
-import org.amnezia.awg.config.BadConfigException
-import org.amnezia.awg.config.Peer
+import io.routedns.vpn.BR
+import io.routedns.vpn.config.Attribute
+import io.routedns.vpn.config.BadConfigException
+import io.routedns.vpn.config.Peer
 import java.lang.ref.WeakReference
 
 class PeerProxy : BaseObservable, Parcelable {

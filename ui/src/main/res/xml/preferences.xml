@@ -2,7 +2,7 @@
 <androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
         android:key="settings">
-    <org.amnezia.awg.preference.VersionPreference
+    <io.routedns.vpn.preference.VersionPreference
         android:icon="@drawable/ic_icon"
         android:key="version" />
     <CheckBoxPreference
@@ -12,8 +12,8 @@
         android:summaryOff="@string/restore_on_boot_summary_off"
         android:summaryOn="@string/restore_on_boot_summary_on"
         android:title="@string/restore_on_boot_title" />
-    <org.amnezia.awg.preference.ZipExporterPreference android:key="zip_exporter" />
-    <org.amnezia.awg.preference.QuickTilePreference android:key="quick_tile"
+    <io.routedns.vpn.preference.ZipExporterPreference android:key="zip_exporter" />
+    <io.routedns.vpn.preference.QuickTilePreference android:key="quick_tile"
             tools:targetApi="33" />
     <Preference
         android:key="log_viewer"
@@ -55,8 +55,8 @@
         android:summaryOff="@string/multiple_tunnels_summary_off"
         android:summaryOn="@string/multiple_tunnels_summary_on"
         android:title="@string/multiple_tunnels_title" />
-    <org.amnezia.awg.preference.ToolsInstallerPreference android:key="tools_installer" />
-    <org.amnezia.awg.preference.KernelModuleEnablerPreference android:key="kernel_module_enabler" />
+    <io.routedns.vpn.preference.ToolsInstallerPreference android:key="tools_installer" />
+    <io.routedns.vpn.preference.KernelModuleEnablerPreference android:key="kernel_module_enabler" />
     <CheckBoxPreference
         android:defaultValue="false"
         android:key="allow_remote_control_intents"

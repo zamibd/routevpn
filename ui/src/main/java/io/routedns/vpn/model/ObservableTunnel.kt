@@ -2,23 +2,23 @@
  * Copyright © 2017-2023 WireGuard LLC. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.amnezia.awg.model
+package io.routedns.vpn.model
 
 import android.util.Log
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
-import org.amnezia.awg.BR
-import org.amnezia.awg.backend.Statistics
-import org.amnezia.awg.backend.Tunnel
-import org.amnezia.awg.databinding.Keyed
-import org.amnezia.awg.util.applicationScope
-import org.amnezia.awg.config.Config
+import io.routedns.vpn.BR
+import io.routedns.vpn.backend.Statistics
+import io.routedns.vpn.backend.Tunnel
+import io.routedns.vpn.databinding.Keyed
+import io.routedns.vpn.util.applicationScope
+import io.routedns.vpn.config.Config
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 /**
- * Encapsulates the volatile and nonvolatile state of an AmneziaWG tunnel.
+ * Encapsulates the volatile and nonvolatile state of an RouteVPN tunnel.
  */
 class ObservableTunnel internal constructor(
     private val manager: TunnelManager,
@@ -166,6 +166,6 @@ class ObservableTunnel internal constructor(
 
 
     companion object {
-        private const val TAG = "AmneziaWG/ObservableTunnel"
+        private const val TAG = "RouteVPN/ObservableTunnel"
     }
 }

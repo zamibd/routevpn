@@ -2,15 +2,15 @@
  * Copyright © 2017-2023 WireGuard LLC. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.amnezia.awg.widget
+package io.routedns.vpn.widget
 
 import android.text.InputFilter
 import android.text.SpannableStringBuilder
 import android.text.Spanned
-import org.amnezia.awg.crypto.Key
+import io.routedns.vpn.crypto.Key
 
 /**
- * InputFilter for entering AmneziaWG private/public keys encoded with base64.
+ * InputFilter for entering RouteVPN private/public keys encoded with base64.
  */
 class KeyInputFilter : InputFilter {
     override fun filter(

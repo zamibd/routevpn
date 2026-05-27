@@ -85,7 +85,7 @@
     <string name="config_rename_error">Không thể xóa file cấu hình \"%s\"</string>
     <string name="config_save_error">Không thể lưu cấu hình cho \"%1$s\": %2$s</string>
     <string name="config_save_success">Đã lưu cấu hình thành công cho \"%s\"</string>
-    <string name="create_activity_title">Tạo ra AmneziaWG VPN</string>
+    <string name="create_activity_title">Tạo ra RouteVPN VPN</string>
     <string name="create_bin_dir_error">Không thế tạo local binary directory</string>
     <string name="create_downloads_file_error">Không thể tạo file trong thư mục download</string>
     <string name="create_empty">Làm lại từ đầu</string>
@@ -129,14 +129,14 @@
     <string name="interface_title">Giao diện</string>
     <string name="key_contents_error">Kí tự không hợp lệ trong khoá</string>
     <string name="key_length_error">Độ dài khoá không hợp lệ</string>
-    <string name="key_length_explanation_base64">: Khoá AmneziaWG base64 phải đủ 44 ký tự (32 bytes)</string>
-    <string name="key_length_explanation_binary">: Khoá AmneziaWG phải đủ 32 bytes</string>
-    <string name="key_length_explanation_hex">: Khoá AmneziaWG hex phải đủ 64 ký tự (32 bytes)</string>
+    <string name="key_length_explanation_base64">: Khoá RouteVPN base64 phải đủ 44 ký tự (32 bytes)</string>
+    <string name="key_length_explanation_binary">: Khoá RouteVPN phải đủ 32 bytes</string>
+    <string name="key_length_explanation_hex">: Khoá RouteVPN hex phải đủ 64 ký tự (32 bytes)</string>
     <string name="latest_handshake">Lần bắt tay cuối</string>
     <string name="latest_handshake_ago">%s giây trước</string>
     <string name="listen_port">Cổng</string>
     <string name="log_export_error">Không thể xuất nhật ký: %s</string>
-    <string name="log_export_subject">File nhật ký AmneziaWG Android</string>
+    <string name="log_export_subject">File nhật ký RouteVPN Android</string>
     <string name="log_export_success">Đã lưu vào \"%s\"</string>
     <string name="log_export_title">Xuất file nhật ký</string>
     <string name="log_saver_activity_label">Lưu nhật ký</string>
@@ -148,7 +148,7 @@
     <string name="root_mode_error">Quyền truy cập root không khả dụng</string>
     <string name="root_shell_error">Lệnh root shell thất bại: %d</string>
     <string name="type_name_root_go_userspace">Root Go userspace</string>
-    <string name="tasker_plugin_title">Điều khiển đường hầm AmneziaWG</string>
+    <string name="tasker_plugin_title">Điều khiển đường hầm RouteVPN</string>
     <string name="tasker_select_tunnel">Đường hầm</string>
     <string name="tasker_select_action">Hành động</string>
     <string name="tasker_action_up">Bật</string>
@@ -163,7 +163,7 @@
     <string name="process_protection_summary_off">Tiến trình không được bảo vệ khỏi bị hệ thống kết thúc</string>
     <string name="process_protection_summary_on">Tiến trình được bảo vệ khỏi bị kết thúc (ưu tiên OOM thấp)</string>
     <string name="process_protection_error">Không thể áp dụng bảo vệ tiến trình</string>
-    <string name="root_tunnel_notification_channel">AmneziaWG+ Tunnel Root</string>
+    <string name="root_tunnel_notification_channel">RouteVPN Tunnel Root</string>
     <string name="root_tunnel_notification_connected">Đã kết nối</string>
     <string name="root_tunnel_notification_connecting">Đang kết nối…</string>
     <string name="root_tunnel_notification_cleanup">Đang dọn dẹp\u2026</string>

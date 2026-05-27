@@ -103,7 +103,7 @@
     <string name="hint_optional">(προαιρετικό)</string>
     <string name="key_contents_error">Μη έγκυροι χαρακτήρες στο κλειδί</string>
     <string name="key_length_error">Εσφαλμένο μήκος κλειδιού</string>
-    <string name="key_length_explanation_binary">: Τα κλειδιά του AmneziaWG πρέπει να είναι 32 bytes</string>
+    <string name="key_length_explanation_binary">: Τα κλειδιά του RouteVPN πρέπει να είναι 32 bytes</string>
     <string name="log_export_title">Εξαγωγή αρχείου καταγραφής</string>
     <string name="log_saver_activity_label">Αποθήκευση αρχείου καταγραφής</string>
     <string name="log_viewer_title">Αρχείο καταγραφής</string>
@@ -129,7 +129,7 @@
     <string name="tunnel_error_invalid_name">Μη έγκυρο όνομα</string>
     <string name="unknown_error">Άγνωστο σφάλμα</string>
     <string name="version_summary_unknown">Άγνωστη έκδοση %s</string>
-    <string name="version_title">AmneziaWG+ για Android v%s</string>
+    <string name="version_title">RouteVPN για Android v%s</string>
     <string name="biometric_auth_error">Αποτυχία ελέγχου ταυτότητας</string>
     <string name="biometric_auth_error_reason">Αποτυχία ελέγχου ταυτότητας: %s</string>
     <string name="root_mode_summary_off">Χρήση Android VPN API (τυπική λειτουργία)</string>
@@ -138,7 +138,7 @@
     <string name="root_mode_error">Η πρόσβαση root δεν είναι διαθέσιμη</string>
     <string name="root_shell_error">Η εντολή root shell απέτυχε: %d</string>
     <string name="type_name_root_go_userspace">Root Go userspace</string>
-    <string name="tasker_plugin_title">Έλεγχος τούνελ AmneziaWG</string>
+    <string name="tasker_plugin_title">Έλεγχος τούνελ RouteVPN</string>
     <string name="tasker_select_tunnel">Τούνελ</string>
     <string name="tasker_select_action">Ενέργεια</string>
     <string name="tasker_action_up">Ενεργοποίηση</string>
@@ -153,7 +153,7 @@
     <string name="process_protection_summary_off">Η διεργασία δεν προστατεύεται από τερματισμό από το σύστημα</string>
     <string name="process_protection_summary_on">Η διεργασία προστατεύεται από τερματισμό (χαμηλή προτεραιότητα OOM)</string>
     <string name="process_protection_error">Αποτυχία εφαρμογής προστασίας διεργασίας</string>
-    <string name="root_tunnel_notification_channel">AmneziaWG+ Root Tunnel</string>
+    <string name="root_tunnel_notification_channel">RouteVPN Root Tunnel</string>
     <string name="root_tunnel_notification_connected">Συνδεδεμένο</string>
     <string name="root_tunnel_notification_connecting">Σύνδεση…</string>
     <string name="root_tunnel_notification_cleanup">Εκκαθάριση\u2026</string>

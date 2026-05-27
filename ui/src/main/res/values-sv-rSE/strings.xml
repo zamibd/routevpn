@@ -98,7 +98,7 @@
     <string name="config_rename_error">Kan inte byta namn på konfigurationsfil ”%s”</string>
     <string name="config_save_error">Kan inte spara konfigurationen för ”%1$s”: %2$s</string>
     <string name="config_save_success">Konfigurationen för ”%s ” sparades</string>
-    <string name="create_activity_title">Skapa AmneziaWG Tunnel</string>
+    <string name="create_activity_title">Skapa RouteVPN Tunnel</string>
     <string name="create_bin_dir_error">Kan inte skapa lokal binärkatalog</string>
     <string name="create_downloads_file_error">Kan inte skapa fil i nedladdningskatalogen</string>
     <string name="create_empty">Skapa från grunden</string>
@@ -142,14 +142,14 @@
     <string name="interface_title">Gränssnitt</string>
     <string name="key_contents_error">Ogiltiga tecken i nyckel</string>
     <string name="key_length_error">Felaktig nyckellängd</string>
-    <string name="key_length_explanation_base64">: AmneziaWG base64 nycklar måste vara 44 tecken (32 bytes)</string>
-    <string name="key_length_explanation_binary">: AmneziaWG nycklar måste vara 32 bytes</string>
-    <string name="key_length_explanation_hex">: AmneziaWG hex nycklar måste vara 64 tecken (32 bytes)</string>
+    <string name="key_length_explanation_base64">: RouteVPN base64 nycklar måste vara 44 tecken (32 bytes)</string>
+    <string name="key_length_explanation_binary">: RouteVPN nycklar måste vara 32 bytes</string>
+    <string name="key_length_explanation_hex">: RouteVPN hex nycklar måste vara 64 tecken (32 bytes)</string>
     <string name="latest_handshake">Senaste handskakning</string>
     <string name="latest_handshake_ago">%s sedan</string>
     <string name="listen_port">Lyssningsport</string>
     <string name="log_export_error">Kan inte exportera loggen: %s</string>
-    <string name="log_export_subject">AmneziaWG Android loggfil</string>
+    <string name="log_export_subject">RouteVPN Android loggfil</string>
     <string name="log_export_success">Sparad till ”%s”</string>
     <string name="log_export_title">Exportera loggfil</string>
     <string name="log_saver_activity_label">Spara logg</string>
@@ -182,8 +182,8 @@
     <string name="parse_error_integer">nummer</string>
     <string name="parse_error_reason">Kan inte tolka %1$s ”%2$s”</string>
     <string name="peer">Klient</string>
-    <string name="permission_description">styra AmneziaWG tunnlar, aktivera och inaktivera tunnlar efter behag, möjlighet till felkoppling av internettrafik</string>
-    <string name="permission_label">kontrollera AmneziaWG tunnlar</string>
+    <string name="permission_description">styra RouteVPN tunnlar, aktivera och inaktivera tunnlar efter behag, möjlighet till felkoppling av internettrafik</string>
+    <string name="permission_label">kontrollera RouteVPN tunnlar</string>
     <string name="persistent_keepalive">Beständig keepalive</string>
     <string name="pre_shared_key">Fördelad nyckel</string>
     <string name="pre_shared_key_enabled">aktiverad</string>
@@ -210,7 +210,7 @@
     <string name="shell_start_error">Shell kunde inte starta: %d</string>
     <string name="success_application_will_restart">Framgång. Applikationen kommer nu att starta om…</string>
     <string name="toggle_all">Växla alla</string>
-    <string name="toggle_error">Fel vid växling av AmneziaWG-tunnel: %s</string>
+    <string name="toggle_error">Fel vid växling av RouteVPN-tunnel: %s</string>
     <string name="tools_installer_already">awg och awg-quick är redan installerade</string>
     <string name="tools_installer_failure">Kan inte installera kommandoradsverktyg (ej root?)</string>
     <string name="tools_installer_initial">Installera valfria verktyg för skriptprogram</string>
@@ -247,7 +247,7 @@
     <string name="version_summary">%1$s bakstycke %2$s</string>
     <string name="version_summary_checking">Kontrollerar %s backstycke utgåva</string>
     <string name="version_summary_unknown">Okänd %s utgåva</string>
-    <string name="version_title">AmneziaWG+ för Android v%s</string>
+    <string name="version_title">RouteVPN för Android v%s</string>
     <string name="vpn_not_authorized_error">VPN-tjänsten är inte godkänd av användaren</string>
     <string name="vpn_start_error">Kan inte starta Android VPN-tjänst</string>
     <string name="zip_export_error">Kan inte exportera tunnlar: %s</string>
@@ -258,7 +258,7 @@
     <string name="biometric_prompt_private_key_title">Godkänn för att visa tunnelns privata nycklar</string>
     <string name="biometric_auth_error">Fel vid godkännande</string>
     <string name="biometric_auth_error_reason">Fel vid godkännande: %s</string>
-    <string name="tasker_plugin_title">AmneziaWG tunnelkontroll</string>
+    <string name="tasker_plugin_title">RouteVPN tunnelkontroll</string>
     <string name="tasker_select_tunnel">Tunnel</string>
     <string name="tasker_select_action">Åtgärd</string>
     <string name="tasker_action_up">Slå på</string>
@@ -273,7 +273,7 @@
     <string name="process_protection_summary_off">Processen är inte skyddad mot att avslutas av systemet</string>
     <string name="process_protection_summary_on">Processen är skyddad mot avslutning (låg OOM-prioritet)</string>
     <string name="process_protection_error">Kunde inte aktivera processskydd</string>
-    <string name="root_tunnel_notification_channel">AmneziaWG+ Root-tunnel</string>
+    <string name="root_tunnel_notification_channel">RouteVPN Root-tunnel</string>
     <string name="root_tunnel_notification_connected">Ansluten</string>
     <string name="root_tunnel_notification_connecting">Ansluter…</string>
     <string name="root_tunnel_notification_cleanup">Rensar\u2026</string>

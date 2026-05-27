@@ -2,7 +2,7 @@
  * Copyright © 2017-2023 WireGuard LLC. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.amnezia.awg.viewmodel
+package io.routedns.vpn.viewmodel
 
 import android.os.Parcel
 import android.os.Parcelable
@@ -10,13 +10,13 @@ import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
 import androidx.databinding.ObservableArrayList
 import androidx.databinding.ObservableList
-import org.amnezia.awg.BR
-import org.amnezia.awg.config.Attribute
-import org.amnezia.awg.config.BadConfigException
-import org.amnezia.awg.config.Interface
-import org.amnezia.awg.crypto.Key
-import org.amnezia.awg.crypto.KeyFormatException
-import org.amnezia.awg.crypto.KeyPair
+import io.routedns.vpn.BR
+import io.routedns.vpn.config.Attribute
+import io.routedns.vpn.config.BadConfigException
+import io.routedns.vpn.config.Interface
+import io.routedns.vpn.crypto.Key
+import io.routedns.vpn.crypto.KeyFormatException
+import io.routedns.vpn.crypto.KeyPair
 
 class InterfaceProxy : BaseObservable, Parcelable {
     @get:Bindable

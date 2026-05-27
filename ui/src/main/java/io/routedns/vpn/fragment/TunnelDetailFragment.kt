@@ -2,7 +2,7 @@
  * Copyright © 2017-2023 WireGuard LLC. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.amnezia.awg.fragment
+package io.routedns.vpn.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -15,14 +15,14 @@ import androidx.core.view.MenuProvider
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
-import org.amnezia.awg.Application
-import org.amnezia.awg.R
-import org.amnezia.awg.backend.RootGoBackend
-import org.amnezia.awg.backend.Tunnel
-import org.amnezia.awg.databinding.TunnelDetailFragmentBinding
-import org.amnezia.awg.databinding.TunnelDetailPeerBinding
-import org.amnezia.awg.model.ObservableTunnel
-import org.amnezia.awg.util.QuantityFormatter
+import io.routedns.vpn.Application
+import io.routedns.vpn.R
+import io.routedns.vpn.backend.RootGoBackend
+import io.routedns.vpn.backend.Tunnel
+import io.routedns.vpn.databinding.TunnelDetailFragmentBinding
+import io.routedns.vpn.databinding.TunnelDetailPeerBinding
+import io.routedns.vpn.model.ObservableTunnel
+import io.routedns.vpn.util.QuantityFormatter
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

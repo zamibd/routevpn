@@ -2,7 +2,7 @@
  * Copyright © 2017-2023 WireGuard LLC. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0
  */
-package org.amnezia.awg.activity
+package io.routedns.vpn.activity
 
 import android.content.Intent
 import android.os.Bundle
@@ -15,15 +15,15 @@ import androidx.appcompat.app.ActionBar
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.fragment.app.commit
-import org.amnezia.awg.R
-import org.amnezia.awg.fragment.TunnelDetailFragment
-import org.amnezia.awg.fragment.TunnelEditorFragment
-import org.amnezia.awg.model.ObservableTunnel
+import io.routedns.vpn.R
+import io.routedns.vpn.fragment.TunnelDetailFragment
+import io.routedns.vpn.fragment.TunnelEditorFragment
+import io.routedns.vpn.model.ObservableTunnel
 
 /**
- * CRUD interface for AmneziaWG tunnels. This activity serves as the main entry point to the
- * AmneziaWG application, and contains several fragments for listing, viewing details of, and
- * editing the configuration and interface state of AmneziaWG tunnels.
+ * CRUD interface for RouteVPN tunnels. This activity serves as the main entry point to the
+ * RouteVPN application, and contains several fragments for listing, viewing details of, and
+ * editing the configuration and interface state of RouteVPN tunnels.
  */
 class MainActivity : BaseActivity(), FragmentManager.OnBackStackChangedListener {
     private var actionBar: ActionBar? = null

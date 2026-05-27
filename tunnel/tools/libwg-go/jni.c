@@ -17,7 +17,7 @@
 #include <linux/if_tun.h>
 #include <android/log.h>
 
-#define LOG_TAG "AmneziaWG/JNI"
+#define LOG_TAG "RouteVPN/JNI"
 #define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, LOG_TAG, __VA_ARGS__)
 
 struct go_string { const char *str; long n; };
@@ -28,7 +28,7 @@ extern int awgGetSocketV6(int handle);
 extern char *awgGetConfig(int handle);
 extern char *awgVersion();
 
-JNIEXPORT jint JNICALL Java_org_amnezia_awg_GoBackend_awgTurnOn(JNIEnv *env, jclass c, jstring ifname, jint tun_fd, jstring settings)
+JNIEXPORT jint JNICALL Java_io_routedns_vpn_GoBackend_awgTurnOn(JNIEnv *env, jclass c, jstring ifname, jint tun_fd, jstring settings)
 {
 	const char *ifname_str = (*env)->GetStringUTFChars(env, ifname, 0);
 	size_t ifname_len = (*env)->GetStringUTFLength(env, ifname);
@@ -46,22 +46,22 @@ JNIEXPORT jint JNICALL Java_org_amnezia_awg_GoBackend_awgTurnOn(JNIEnv *env, jcl
 	return ret;
 }
 
-JNIEXPORT void JNICALL Java_org_amnezia_awg_GoBackend_awgTurnOff(JNIEnv *env, jclass c, jint handle)
+JNIEXPORT void JNICALL Java_io_routedns_vpn_GoBackend_awgTurnOff(JNIEnv *env, jclass c, jint handle)
 {
 	awgTurnOff(handle);
 }
 
-JNIEXPORT jint JNICALL Java_org_amnezia_awg_GoBackend_awgGetSocketV4(JNIEnv *env, jclass c, jint handle)
+JNIEXPORT jint JNICALL Java_io_routedns_vpn_GoBackend_awgGetSocketV4(JNIEnv *env, jclass c, jint handle)
 {
 	return awgGetSocketV4(handle);
 }
 
-JNIEXPORT jint JNICALL Java_org_amnezia_awg_GoBackend_awgGetSocketV6(JNIEnv *env, jclass c, jint handle)
+JNIEXPORT jint JNICALL Java_io_routedns_vpn_GoBackend_awgGetSocketV6(JNIEnv *env, jclass c, jint handle)
 {
 	return awgGetSocketV6(handle);
 }
 
-JNIEXPORT jstring JNICALL Java_org_amnezia_awg_GoBackend_awgGetConfig(JNIEnv *env, jclass c, jint handle)
+JNIEXPORT jstring JNICALL Java_io_routedns_vpn_GoBackend_awgGetConfig(JNIEnv *env, jclass c, jint handle)
 {
 	jstring ret;
 	char *config = awgGetConfig(handle);
@@ -72,7 +72,7 @@ JNIEXPORT jstring JNICALL Java_org_amnezia_awg_GoBackend_awgGetConfig(JNIEnv *en
 	return ret;
 }
 
-JNIEXPORT jstring JNICALL Java_org_amnezia_awg_GoBackend_awgVersion(JNIEnv *env, jclass c)
+JNIEXPORT jstring JNICALL Java_io_routedns_vpn_GoBackend_awgVersion(JNIEnv *env, jclass c)
 {
 	jstring ret;
 	char *version = awgVersion();
@@ -83,7 +83,7 @@ JNIEXPORT jstring JNICALL Java_org_amnezia_awg_GoBackend_awgVersion(JNIEnv *env,
 	return ret;
 }
 
-JNIEXPORT jint JNICALL Java_org_amnezia_awg_GoBackend_openTun(JNIEnv *env, jclass c, jstring ifname)
+JNIEXPORT jint JNICALL Java_io_routedns_vpn_GoBackend_openTun(JNIEnv *env, jclass c, jstring ifname)
 {
 	int fd = open("/dev/net/tun", O_RDWR);
 	if (fd < 0) {
@@ -115,13 +115,13 @@ JNIEXPORT jint JNICALL Java_org_amnezia_awg_GoBackend_openTun(JNIEnv *env, jclas
 	return fd;
 }
 
-JNIEXPORT void JNICALL Java_org_amnezia_awg_GoBackend_closeTun(JNIEnv *env, jclass c, jint fd)
+JNIEXPORT void JNICALL Java_io_routedns_vpn_GoBackend_closeTun(JNIEnv *env, jclass c, jint fd)
 {
 	if (fd >= 0)
 		close(fd);
 }
 
-JNIEXPORT jint JNICALL Java_org_amnezia_awg_GoBackend_receiveTunFd(JNIEnv *env, jclass c, jstring socketPath)
+JNIEXPORT jint JNICALL Java_io_routedns_vpn_GoBackend_receiveTunFd(JNIEnv *env, jclass c, jstring socketPath)
 {
 	const char *path = (*env)->GetStringUTFChars(env, socketPath, 0);
 

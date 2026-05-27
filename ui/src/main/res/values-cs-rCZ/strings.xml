@@ -122,7 +122,7 @@
     <string name="config_rename_error">Konfigurační soubor „%s“ nelze přejmenovat</string>
     <string name="config_save_error">Nelze uložit konfiguraci pro „%1$s“: %2$s</string>
     <string name="config_save_success">Konfigurace pro „%s“ byla úspěšně uložena</string>
-    <string name="create_activity_title">Vytvořit AmneziaWG tunel</string>
+    <string name="create_activity_title">Vytvořit RouteVPN tunel</string>
     <string name="delete">Smazat</string>
     <string name="log_viewer_pref_summary">Logy mohou pomoci s debuggingem</string>
     <string name="log_viewer_pref_title">Zobrazit log aplikace</string>
@@ -148,7 +148,7 @@
     <string name="root_mode_error">Root přístup není dostupný</string>
     <string name="root_shell_error">Příkaz root shellu selhal: %d</string>
     <string name="type_name_root_go_userspace">Root Go userspace</string>
-    <string name="tasker_plugin_title">Ovládání tunelu AmneziaWG</string>
+    <string name="tasker_plugin_title">Ovládání tunelu RouteVPN</string>
     <string name="tasker_select_tunnel">Tunel</string>
     <string name="tasker_select_action">Akce</string>
     <string name="tasker_action_up">Zapnout</string>
@@ -163,7 +163,7 @@
     <string name="process_protection_summary_off">Proces není chráněn před ukončením systémem</string>
     <string name="process_protection_summary_on">Proces je chráněn před ukončením (nízká priorita OOM)</string>
     <string name="process_protection_error">Nepodařilo se aktivovat ochranu procesu</string>
-    <string name="root_tunnel_notification_channel">AmneziaWG+ Root tunel</string>
+    <string name="root_tunnel_notification_channel">RouteVPN Root tunel</string>
     <string name="root_tunnel_notification_connected">Připojeno</string>
     <string name="root_tunnel_notification_connecting">Připojování…</string>
     <string name="root_tunnel_notification_cleanup">Čištění\u2026</string>

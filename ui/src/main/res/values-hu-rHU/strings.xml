@@ -45,7 +45,7 @@
     <string name="process_protection_summary_off">A folyamat nincs védve a rendszer általi leállítás ellen</string>
     <string name="process_protection_summary_on">A folyamat védett a leállítás ellen (alacsony OOM-prioritás)</string>
     <string name="process_protection_error">A folyamatvédelem alkalmazása sikertelen</string>
-    <string name="root_tunnel_notification_channel">AmneziaWG+ Root alagút</string>
+    <string name="root_tunnel_notification_channel">RouteVPN Root alagút</string>
     <string name="root_tunnel_notification_connected">Csatlakozva</string>
     <string name="root_tunnel_notification_connecting">Csatlakozás…</string>
     <string name="root_tunnel_notification_cleanup">Tisztítás\u2026</string>

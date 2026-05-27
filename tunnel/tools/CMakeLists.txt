@@ -8,7 +8,14 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}")
 add_link_options(LINKER:--build-id=none LINKER:-z,max-page-size=16384)
 add_compile_options(-Wall -Werror)
 
-add_executable(libwg-quick.so amneziawg-tools/src/wg-quick/android.c ndk-compat/compat.c)
+set(WG_QUICK_ANDROID_C_IN "${CMAKE_CURRENT_SOURCE_DIR}/amneziawg-tools/src/wg-quick/android.c")
+set(WG_QUICK_ANDROID_C_OUT "${CMAKE_CURRENT_BINARY_DIR}/wg-quick-android.c")
+file(READ "${WG_QUICK_ANDROID_C_IN}" WG_QUICK_ANDROID_C_CONTENT)
+string(REPLACE "org.amnezia.awg.action.REFRESH_TUNNEL_STATES"
+    "${ANDROID_PACKAGE_NAME}.action.REFRESH_TUNNEL_STATES"
+    WG_QUICK_ANDROID_C_CONTENT "${WG_QUICK_ANDROID_C_CONTENT}")
+file(WRITE "${WG_QUICK_ANDROID_C_OUT}" "${WG_QUICK_ANDROID_C_CONTENT}")
+add_executable(libwg-quick.so "${WG_QUICK_ANDROID_C_OUT}" ndk-compat/compat.c)
 target_compile_options(libwg-quick.so PUBLIC -std=gnu11 -include ${CMAKE_CURRENT_SOURCE_DIR}/ndk-compat/compat.h -DAWG_PACKAGE_NAME=\"${ANDROID_PACKAGE_NAME}\")
 target_link_libraries(libwg-quick.so -ldl)
 

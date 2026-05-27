@@ -1,4 +1,4 @@
-package org.amnezia.awg;
+package io.routedns.vpn;
 
 import androidx.annotation.Nullable;
 

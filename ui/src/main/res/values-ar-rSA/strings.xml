@@ -234,7 +234,7 @@
     <string name="parse_error_integer">رقم</string>
     <string name="parse_error_reason">لا يمكن تحليل %1$s \"%2$s\"</string>
     <string name="peer">ند</string>
-    <string name="permission_description">التحكم في أنفاق AmneziaWG، وتمكين الأنفاق وتعطيلها حسب الرغبة، مما قد يؤدي إلى تضليل حركة مرور الإنترنت</string>
+    <string name="permission_description">التحكم في أنفاق RouteVPN، وتمكين الأنفاق وتعطيلها حسب الرغبة، مما قد يؤدي إلى تضليل حركة مرور الإنترنت</string>
     <string name="permission_label">التحكم في أنفاق وايرجارد</string>
     <string name="persistent_keepalive">الحفاظ المستمر</string>
     <string name="pre_shared_key">مفتاح مسبق التشارك (Pre-shared key)</string>
@@ -310,7 +310,7 @@
     <string name="biometric_prompt_private_key_title">تحتاج للاستيثاق لعرض المفتاح الخاص</string>
     <string name="biometric_auth_error">فشل في المصادقة</string>
     <string name="biometric_auth_error_reason">فشل في المصادقة: %s</string>
-    <string name="tasker_plugin_title">التحكم في نفق AmneziaWG</string>
+    <string name="tasker_plugin_title">التحكم في نفق RouteVPN</string>
     <string name="tasker_select_tunnel">النفق</string>
     <string name="tasker_select_action">الإجراء</string>
     <string name="tasker_action_up">تشغيل</string>
@@ -325,7 +325,7 @@
     <string name="process_protection_summary_off">العملية غير محمية من الإنهاء بواسطة النظام</string>
     <string name="process_protection_summary_on">العملية محمية من الإنهاء (أولوية OOM منخفضة)</string>
     <string name="process_protection_error">فشل تطبيق حماية العملية</string>
-    <string name="root_tunnel_notification_channel">AmneziaWG+ نفق الجذر</string>
+    <string name="root_tunnel_notification_channel">RouteVPN نفق الجذر</string>
     <string name="root_tunnel_notification_connected">متصل</string>
     <string name="root_tunnel_notification_connecting">جارٍ الاتصال…</string>
     <string name="root_tunnel_notification_cleanup">جارٍ التنظيف\u2026</string>
