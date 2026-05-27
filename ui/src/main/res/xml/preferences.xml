@@ -20,6 +20,10 @@
         android:singleLineTitle="false"
         android:summary="@string/log_viewer_pref_summary"
         android:title="@string/log_viewer_pref_title" />
+    <io.routedns.vpn.preference.SplitTunnelingPreference
+        android:key="split_tunneling"
+        android:singleLineTitle="false"
+        android:summary="@string/split_tunneling_summary" />
     <CheckBoxPreference
         android:defaultValue="false"
         android:key="dark_theme"

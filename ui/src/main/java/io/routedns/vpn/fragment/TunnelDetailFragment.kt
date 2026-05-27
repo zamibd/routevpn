@@ -17,7 +17,6 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import io.routedns.vpn.Application
 import io.routedns.vpn.R
-import io.routedns.vpn.backend.RootGoBackend
 import io.routedns.vpn.backend.Tunnel
 import io.routedns.vpn.databinding.TunnelDetailFragmentBinding
 import io.routedns.vpn.databinding.TunnelDetailPeerBinding
@@ -86,10 +85,6 @@ class TunnelDetailFragment : BaseFragment(), MenuProvider {
                     binding.config = null
                 }
                 binding.executePendingBindings()
-                if (Application.getBackend() is RootGoBackend) {
-                    binding.applicationsLabel.visibility = View.GONE
-                    binding.applicationsText.visibility = View.GONE
-                }
             }
         }
         lastState = Tunnel.State.TOGGLE

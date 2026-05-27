@@ -23,6 +23,8 @@ import io.routedns.vpn.backend.AwgQuickBackend
 import io.routedns.vpn.backend.RootGoBackend
 import io.routedns.vpn.backend.Tunnel
 import io.routedns.vpn.preference.PreferencesPreferenceDataStore
+import io.routedns.vpn.preference.SplitTunnelingPreference
+import io.routedns.vpn.util.SplitTunneling
 import io.routedns.vpn.util.AdminKnobs
 import io.routedns.vpn.util.UserKnobs
 import android.content.ClipData
@@ -67,6 +69,11 @@ class SettingsActivity : AppCompatActivity() {
             ActivityResultContracts.StartActivityForResult()
         ) {
             updateBatteryOptimizationState()
+        }
+
+        override fun onResume() {
+            super.onResume()
+            preferenceManager.findPreference<SplitTunnelingPreference>("split_tunneling")?.refreshSummary()
         }
 
         private fun updateBatteryOptimizationState() {
@@ -146,6 +153,15 @@ class SettingsActivity : AppCompatActivity() {
             preferenceManager.findPreference<Preference>("log_viewer")?.setOnPreferenceClickListener {
                 startActivity(Intent(requireContext(), LogViewerActivity::class.java))
                 true
+            }
+
+            val splitTunnelingPref = preferenceManager.findPreference<SplitTunnelingPreference>("split_tunneling")
+            lifecycleScope.launch {
+                if (!SplitTunneling.isSupported()) {
+                    splitTunnelingPref?.parent?.removePreference(splitTunnelingPref)
+                } else {
+                    splitTunnelingPref?.refreshSummary()
+                }
             }
             val kernelModuleEnabler = preferenceManager.findPreference<Preference>("kernel_module_enabler")
             if (AwgQuickBackend.hasKernelSupport()) {

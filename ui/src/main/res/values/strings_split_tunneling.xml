@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="split_tunneling_title">Split tunneling</string>
+    <string name="split_tunneling_summary">Choose which apps use the VPN. Other apps stay on your normal connection.</string>
+    <string name="split_tunneling_mode_all">All apps use VPN</string>
+    <string name="split_tunneling_settings_summary">%1$s — %2$s</string>
+    <string name="split_tunneling_no_tunnel">Add a tunnel first to configure per-app routing</string>
+    <string name="split_tunneling_unavailable_root">Per-app split tunneling requires standard VPN mode. Turn off root mode in Settings.</string>
+    <string name="split_tunneling_saved">Split tunneling updated. Reconnect the tunnel to apply.</string>
+</resources>
