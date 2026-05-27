@@ -6,13 +6,11 @@ package io.routedns.vpn.fragment
 
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
-import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
 import android.widget.FrameLayout
-import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -40,9 +38,7 @@ class AddTunnelsSheet : BottomSheetDialogFragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         if (savedInstanceState != null) dismiss()
-        val view = inflater.inflate(R.layout.add_tunnels_bottom_sheet, container, false)
-        view.findViewById<TextView>(R.id.disclaimer)?.let { it.movementMethod = LinkMovementMethod.getInstance() }
-        return view
+        return inflater.inflate(R.layout.add_tunnels_bottom_sheet, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
