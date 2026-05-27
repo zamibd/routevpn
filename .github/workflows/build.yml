@@ -118,6 +118,9 @@ jobs:
       shell: bash
       env:
         GRADLE_TASK: ${{ steps.cfg.outputs.gradle_task }}
+        ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+        ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+        ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
       run: |
         set -euo pipefail
         chmod +x ./gradlew
@@ -149,76 +152,23 @@ jobs:
         ls -lh output/
         echo "::endgroup::"
 
-    - name: Sign release artifacts
+    - name: Verify release signing
       if: ${{ steps.cfg.outputs.needs_signing == 'true' }}
       shell: bash
       env:
-        KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
-        KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
-        KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
         BUILD_KIND: ${{ steps.cfg.outputs.kind }}
       run: |
         set -euo pipefail
-
-        if [[ -z "${KEYSTORE_PASSWORD}" || -z "${KEY_ALIAS}" ]]; then
-          echo "Missing one of secrets: ANDROID_KEYSTORE_PASSWORD / ANDROID_KEY_ALIAS" >&2
-          exit 1
-        fi
-
-        KEY_PASSWORD_EFFECTIVE="${KEY_PASSWORD:-$KEYSTORE_PASSWORD}"
-
         if [[ "${BUILD_KIND}" == "aab" ]]; then
           AAB="$(ls output/*.aab)"
-          SIGNED_AAB="${AAB%.aab}-signed.aab"
-
-          KEYPASS_ARGS=()
-          if [[ -n "${KEY_PASSWORD}" ]]; then
-            KEYPASS_ARGS=(-keypass "${KEY_PASSWORD}")
-          fi
-
-          jarsigner \
-            -keystore "${KEYSTORE_PATH}" \
-            -storepass "${KEYSTORE_PASSWORD}" \
-            "${KEYPASS_ARGS[@]}" \
-            -signedjar "${SIGNED_AAB}" \
-            "${AAB}" \
-            "${KEY_ALIAS}"
-
-          rm -f "${AAB}"
+          jarsigner -verify -verbose "${AAB}" | head -20
         else
-          ZIPALIGN="$(find "${ANDROID_HOME}/build-tools" -type f -name zipalign | sort -V | tail -n 1)"
           APKSIGNER="$(find "${ANDROID_HOME}/build-tools" -type f -name apksigner | sort -V | tail -n 1)"
-
-          if [[ -z "${ZIPALIGN}" || -z "${APKSIGNER}" ]]; then
-            echo "zipalign/apksigner not found in ANDROID_HOME build-tools" >&2
-            exit 1
-          fi
-
           for APK in output/*.apk; do
-            BASENAME="$(basename "${APK}")"
-            ALIGNED="output/${BASENAME%.apk}-aligned.apk"
-
-            if [[ "${BASENAME}" == *-unsigned* ]]; then
-              SIGNED="output/${BASENAME//-unsigned/}"
-            else
-              SIGNED="output/${BASENAME%.apk}-signed.apk"
-            fi
-
-            "${ZIPALIGN}" -f -p 4 "${APK}" "${ALIGNED}"
-
-            "${APKSIGNER}" sign \
-              --ks "${KEYSTORE_PATH}" \
-              --ks-key-alias "${KEY_ALIAS}" \
-              --ks-pass "pass:${KEYSTORE_PASSWORD}" \
-              --key-pass "pass:${KEY_PASSWORD_EFFECTIVE}" \
-              --out "${SIGNED}" \
-              "${ALIGNED}"
-
-            rm -f "${APK}" "${ALIGNED}" "${SIGNED}.idsig"
+            "${APKSIGNER}" verify --verbose "${APK}"
           done
         fi
-
-        echo "::group::Signed artifacts"
+        echo "::group::Release artifacts"
         ls -lh output/
         echo "::endgroup::"
 
