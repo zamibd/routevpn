@@ -103,7 +103,6 @@
     <string name="create_downloads_file_error">Datei kann im Download-Verzeichnis nicht erstellt werden</string>
     <string name="create_empty">Neu erstellen</string>
     <string name="create_from_file">Aus Datei oder Archiv importieren</string>
-    <string name="create_from_qr_code">Von QR-Code scannen</string>
     <string name="create_output_dir_error">Konnte das Ausgabeverzeichnis nicht erstellen</string>
     <string name="create_temp_dir_error">Lokales temporäres Verzeichnis kann nicht erstellt werden</string>
     <string name="create_tunnel">Tunnel erstellen</string>
@@ -189,7 +188,6 @@
     <string name="pre_shared_key_enabled">aktiviert</string>
     <string name="private_key">Privater Schlüssel</string>
     <string name="public_key">Öffentlicher Schlüssel</string>
-    <string name="qr_code_hint">Tipp: Mit `qrencode -t ansiutf8 &lt; tunnel.conf` generieren.</string>
     <string name="quick_settings_tile_add_title">Kachel zu Schnelleinstellungen hinzufügen</string>
     <string name="quick_settings_tile_add_summary">Die Verknüpfung schaltet den letzten Tunnel um</string>
     <string name="quick_settings_tile_add_failure">Verknüpfung kann nicht hinzugefügt werden: Fehler %d</string>

@@ -101,7 +101,6 @@
     <string name="create_downloads_file_error">No es pot crear arxiu en la carpeta de descàrregues</string>
     <string name="create_empty">Crea des de zero</string>
     <string name="create_from_file">Importa des de fitxer o arxiu</string>
-    <string name="create_from_qr_code">Escaneja codi QR</string>
     <string name="create_output_dir_error">Incapaç de crear directori de sortida</string>
     <string name="create_temp_dir_error">No s’ha pogut crear el directori local temporal</string>
     <string name="create_tunnel">Crear túnel</string>
@@ -180,7 +179,6 @@
     <string name="pre_shared_key_enabled">activat</string>
     <string name="private_key">Clau privada</string>
     <string name="public_key">Clau pública</string>
-    <string name="qr_code_hint">Consell: generar amb `qrencode -t ansiutf8 &lt; tunnel.conf`.</string>
     <string name="restore_on_boot_summary_off">No s\'activaran els túnels seleccionats al arrancar el sistema</string>
     <string name="restore_on_boot_summary_on">S\'activaran els túnels seleccionats al arrancar el sistema</string>
     <string name="restore_on_boot_title">Restableix a l\'inici</string>

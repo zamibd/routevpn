@@ -103,7 +103,6 @@
     <string name="create_downloads_file_error">No se puede crear archivo en el directorio de descargas</string>
     <string name="create_empty">Crear de cero</string>
     <string name="create_from_file">Importar desde archivo</string>
-    <string name="create_from_qr_code">Escanear desde código QR</string>
     <string name="create_output_dir_error">No se puede crear el directorio de salida</string>
     <string name="create_temp_dir_error">No se puede crear la carpeta temporal</string>
     <string name="create_tunnel">Crear túnel</string>
@@ -189,7 +188,6 @@
     <string name="pre_shared_key_enabled">activado</string>
     <string name="private_key">Clave privada</string>
     <string name="public_key">Clave pública</string>
-    <string name="qr_code_hint">Consejo: generar con `qrencode -t ansiutf8 &lt; tunnel.conf`.</string>
     <string name="restore_on_boot_summary_off">No mostrará túneles habilitados al arrancar</string>
     <string name="restore_on_boot_summary_on">Mostrará túneles habilitados al arrancar</string>
     <string name="restore_on_boot_title">Restaurar al arrancar</string>

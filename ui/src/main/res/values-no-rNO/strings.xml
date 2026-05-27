@@ -103,7 +103,6 @@
     <string name="create_downloads_file_error">Kan ikke opprette fil i nedlastingsmappen</string>
     <string name="create_empty">Lag fra begynnelsen</string>
     <string name="create_from_file">Importer fra fil eller arkiv</string>
-    <string name="create_from_qr_code">Skann QR-kode</string>
     <string name="create_output_dir_error">Kan ikke opprette utdata-katalog</string>
     <string name="create_temp_dir_error">Kan ikke opprette lokal, midlertidig mappe</string>
     <string name="create_tunnel">Opprett tunnel</string>
@@ -187,7 +186,6 @@
     <string name="pre_shared_key_enabled">aktivert</string>
     <string name="private_key">Privat Nøkkel</string>
     <string name="public_key">Offentlig nøkkel</string>
-    <string name="qr_code_hint">Tips: generer med `qrencode -t ansiutf8 &lt; tunnel.conf`.</string>
     <string name="restore_on_boot_summary_off">Vil ikke ta opp aktive tunneler ved oppstart</string>
     <string name="restore_on_boot_summary_on">Vil ta opp aktive tunneler ved oppstart</string>
     <string name="restore_on_boot_title">Gjenopprett ved oppstart</string>

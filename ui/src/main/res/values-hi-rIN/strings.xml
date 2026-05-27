@@ -99,7 +99,6 @@
     <string name="create_downloads_file_error">डाउनलोड निर्देशिका में फ़ाइल नहीं बना सकते</string>
     <string name="create_empty">शुरू से बनाएँ</string>
     <string name="create_from_file">फ़ाइल या संग्रह से आयात करें</string>
-    <string name="create_from_qr_code">QR कोड स्कैन करें</string>
     <string name="create_output_dir_error">आउटपुट निर्देशिका नहीं बना सकता</string>
     <string name="create_temp_dir_error">स्थानीय अस्थायी निर्देशिका नहीं बना सकते</string>
     <string name="create_tunnel">टनल बनाए</string>
@@ -174,7 +173,6 @@
     <string name="pre_shared_key_enabled">सक्षम</string>
     <string name="private_key">निजी कीस</string>
     <string name="public_key">सार्वजनिक कीस</string>
-    <string name="qr_code_hint">सुझाव: `qrencode -t ansiutf8 &lt; tunnel.conf` के साथ उत्पन्न करो</string>
     <string name="restore_on_boot_summary_off">बूट पर सक्षम टनलस को नहीं लाएगा</string>
     <string name="restore_on_boot_summary_on">बूट पर सक्षम टनलस को लाएगा</string>
     <string name="restore_on_boot_title">बूट पर पुनर्स्थापित करें</string>

@@ -127,7 +127,6 @@
     <string name="create_downloads_file_error">Datoteke v mapi prenosov ni bilo mogoče ustvariti</string>
     <string name="create_empty">Ustvari na novo</string>
     <string name="create_from_file">Uvozi iz datoteke ali arhiva</string>
-    <string name="create_from_qr_code">Skreniraj kodo QR</string>
     <string name="create_output_dir_error">Izhodnega imenika ni bilo mogoče ustvariti</string>
     <string name="create_temp_dir_error">Lokalnega začasnega imenika ni bilo mogoče ustvariti</string>
     <string name="create_tunnel">Ustvari tunel</string>
@@ -210,7 +209,6 @@
     <string name="pre_shared_key_enabled">omogočeno</string>
     <string name="private_key">Zasebni ključ</string>
     <string name="public_key">Javni ključ</string>
-    <string name="qr_code_hint">Namig: izdelajte z `qrencode -t ansiutf8 &lt; tunnel.conf`.</string>
     <string name="restore_on_boot_summary_off">Pri zagonu telefona omogočeni tuneli ne bodo aktivirani</string>
     <string name="restore_on_boot_summary_on">Pri zagonu telefona bodo omogočeni tuneli aktivirani</string>
     <string name="restore_on_boot_title">Ponovna vzpostavitev ob zagonu</string>

@@ -103,7 +103,6 @@
     <string name="create_downloads_file_error">İndirilenler klasöründe dosya oluşturulamadı</string>
     <string name="create_empty">Sıfırdan oluştur</string>
     <string name="create_from_file">Dosya veya arşivden ekle</string>
-    <string name="create_from_qr_code">QR Kodu Tara</string>
     <string name="create_output_dir_error">Çıktı klasörü oluşturulamıyor</string>
     <string name="create_temp_dir_error">Yerel geçici dizin oluşturulamıyor</string>
     <string name="create_tunnel">Tünel Oluştur</string>
@@ -189,7 +188,6 @@
     <string name="pre_shared_key_enabled">etkinleştirildi</string>
     <string name="private_key">Özel anahtar</string>
     <string name="public_key">Genel anahtar</string>
-    <string name="qr_code_hint">İpucu: `qrencode -t ansiutf8 &lt; tunnel.conf` ile oluşturun.</string>
     <string name="quick_settings_tile_add_title">Hızlı ayarlar paneline kutucuk ekle</string>
     <string name="quick_settings_tile_add_summary">Kısayol kutucuğu en son tüneli değiştirir</string>
     <string name="quick_settings_tile_add_failure">Kısayol kutucuğu eklenemiyor: hata %d</string>

@@ -90,7 +90,6 @@
     <string name="create_downloads_file_error">Tidak dapat membuat file di direktori download</string>
     <string name="create_empty">Buat dari awal</string>
     <string name="create_from_file">Impor dari berkas atau arsip</string>
-    <string name="create_from_qr_code">Pindai dari kode QR</string>
     <string name="create_output_dir_error">Tidak dapat membuat direktori keluaran</string>
     <string name="create_temp_dir_error">Tidak dapat membuat direktori lokal sementara</string>
     <string name="create_tunnel">Buat tunel</string>
@@ -173,7 +172,6 @@
     <string name="pre_shared_key_enabled">diaktifkan</string>
     <string name="private_key">Kunci pribadi</string>
     <string name="public_key">Kunci publik</string>
-    <string name="qr_code_hint">Tips: generate dengan `qrencode -t ansiutf8 &lt; tunnel.conf`.</string>
     <string name="restore_on_boot_summary_off">Tunel yang diaktifkan tidak akan ditampilkan saat boot</string>
     <string name="restore_on_boot_summary_on">Tunel yang diaktifkan akan dimunculkan saat boot</string>
     <string name="restore_on_boot_title">Pulihkan saat boot</string>

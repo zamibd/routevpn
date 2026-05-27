@@ -90,7 +90,6 @@
     <string name="cancel">Ακύρωση</string>
     <string name="create_empty">Δημιουργία από την αρχή</string>
     <string name="create_from_file">Εισαγωγή από αρχείο ή αρχειοθήκη</string>
-    <string name="create_from_qr_code">Σάρωση από κωδικό QR</string>
     <string name="dark_theme_title">Χρήση σκούρου θέματος</string>
     <string name="delete">Διαγραφή</string>
     <string name="dns_servers">Διακομιστές DNS</string>

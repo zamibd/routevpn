@@ -155,7 +155,6 @@
     <string name="create_downloads_file_error">لا يمكن إنشاء ملف في دليل التنزيلات</string>
     <string name="create_empty">الإنشاء من الصفر</string>
     <string name="create_from_file">استيراد من ملف أو أرشيف</string>
-    <string name="create_from_qr_code">مسح من رمز الاستجابة السريعة (QR)</string>
     <string name="create_output_dir_error">لا يمكن إنشاء دليل الإخراج</string>
     <string name="create_temp_dir_error">لا يمكن إنشاء دليل مؤقت محلي</string>
     <string name="create_tunnel">إنشاء نفق</string>
@@ -241,7 +240,6 @@
     <string name="pre_shared_key_enabled">مفعّل</string>
     <string name="private_key">مفتاح خاص</string>
     <string name="public_key">مفتاح عام</string>
-    <string name="qr_code_hint">نصيحة: إنشاء بواسطة `qrencode -t ansiutf8 &lt; tunnel.conf`.</string>
     <string name="quick_settings_tile_add_title">إضافة بلاطة إلى لوحة الإعدادات السريعة</string>
     <string name="quick_settings_tile_add_summary">بلاطة الاختصار تستبدل أحدث نفق</string>
     <string name="quick_settings_tile_add_failure">تعذر إضافة لوحة الاختصار: خطأ %d</string>

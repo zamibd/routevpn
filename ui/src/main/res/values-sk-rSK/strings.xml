@@ -48,7 +48,6 @@
     <string name="create_downloads_file_error">Nepodarilo sa vytvoriť súbor v priečinku stiahnuté</string>
     <string name="create_empty">Vytvoriť od počiatku</string>
     <string name="create_from_file">Importovať zo súboru alebo archívu</string>
-    <string name="create_from_qr_code">Skenovať z QR kódu</string>
     <string name="create_output_dir_error">Nepodarilo sa vytvoriť výstupný adresár</string>
     <string name="create_temp_dir_error">Nepodarilo sa vytvoriť lokálny dočasný priečinok</string>
     <string name="create_tunnel">Vytvoriť tunel</string>
@@ -122,7 +121,6 @@
     <string name="pre_shared_key_enabled">povolené</string>
     <string name="private_key">Súkromný kľúč</string>
     <string name="public_key">Verejný kľúč</string>
-    <string name="qr_code_hint">Tip: vygenerovať s `qrencode -t ansiutf8 &lt; tunnel.conf`.</string>
     <string name="restore_on_boot_title">Obnov po štarte</string>
     <string name="root_mode_summary_off">Používanie Android VPN API (štandardný režim)</string>
     <string name="root_mode_summary_on">Používanie root prístupu pre tunel (bez VPN API, všetky aplikácie smerované)</string>

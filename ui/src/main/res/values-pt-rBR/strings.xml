@@ -79,7 +79,6 @@
     <string name="create_downloads_file_error">Não é possível criar arquivo no diretório de downloads</string>
     <string name="create_empty">Criar do zero</string>
     <string name="create_from_file">Criar a partir de arquivo</string>
-    <string name="create_from_qr_code">Ler código QR</string>
     <string name="create_output_dir_error">Não é possível criar o diretório de saída</string>
     <string name="create_temp_dir_error">Não é possível criar o diretório temporário local</string>
     <string name="create_tunnel">Criar túnel</string>
@@ -163,7 +162,6 @@
     <string name="pre_shared_key_enabled">ativo</string>
     <string name="private_key">Chave Privada</string>
     <string name="public_key">Chave pública</string>
-    <string name="qr_code_hint">Dica: gerar com `qrencode -t ansiutf8 &lt; tunnel.conf`.</string>
     <string name="quick_settings_tile_add_title">Adicionar botão ao painel de configurações rápidas</string>
     <string name="quick_settings_tile_add_summary">A tecla de atalho alterna o túnel mais recente</string>
     <string name="quick_settings_tile_add_failure">Não foi possível adicionar o atalho de botão: erro %d</string>

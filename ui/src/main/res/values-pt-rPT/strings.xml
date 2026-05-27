@@ -101,7 +101,6 @@
     <string name="create_downloads_file_error">Não foi possível criar diretoria de downloads local</string>
     <string name="create_empty">Criar do zero</string>
     <string name="create_from_file">Importar de ficheiro ou arquivo</string>
-    <string name="create_from_qr_code">Digitalizar a partir de código QR</string>
     <string name="create_output_dir_error">Não foi possível criar diretoria de saída</string>
     <string name="create_temp_dir_error">Não foi possível criar diretoria local temporária</string>
     <string name="create_tunnel">Criar túnel</string>
@@ -183,7 +182,6 @@
     <string name="pre_shared_key_enabled">ativo</string>
     <string name="private_key">Chave privada</string>
     <string name="public_key">Chave Pública</string>
-    <string name="qr_code_hint">Dica: gerar com `qrencode -t ansiutf8 &lt; tunnel.conf`.</string>
     <string name="restore_on_boot_summary_off">Não abrirá túneis ativos durante o arranque</string>
     <string name="restore_on_boot_summary_on">Abrirá túneis ativos durante o arranque</string>
     <string name="restore_on_boot_title">Restaurar no arranque</string>
