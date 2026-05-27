@@ -54,10 +54,6 @@ class AddTunnelsSheet : BottomSheetDialogFragment() {
                     addBottomSheetCallback(bottomSheetCallback)
                 }
                 constrainSheetHeight(dialog, view)
-                dialog.findViewById<View>(R.id.create_empty)?.setOnClickListener {
-                    dismiss()
-                    onRequestCreateConfig()
-                }
                 dialog.findViewById<View>(R.id.create_from_file)?.setOnClickListener {
                     dismiss()
                     onRequestImportConfig()
@@ -98,10 +94,6 @@ class AddTunnelsSheet : BottomSheetDialogFragment() {
         }
     }
 
-    private fun onRequestCreateConfig() {
-        setFragmentResult(REQUEST_KEY_NEW_TUNNEL, bundleOf(REQUEST_METHOD to REQUEST_CREATE))
-    }
-
     private fun onRequestImportConfig() {
         setFragmentResult(REQUEST_KEY_NEW_TUNNEL, bundleOf(REQUEST_METHOD to REQUEST_IMPORT))
     }
@@ -109,7 +101,6 @@ class AddTunnelsSheet : BottomSheetDialogFragment() {
     companion object {
         const val REQUEST_KEY_NEW_TUNNEL = "request_new_tunnel"
         const val REQUEST_METHOD = "request_method"
-        const val REQUEST_CREATE = "request_create"
         const val REQUEST_IMPORT = "request_import"
     }
 }

@@ -88,7 +88,6 @@
     <string name="create_activity_title">新建 RouteVPN 通道</string>
     <string name="create_bin_dir_error">無法建立本地二進位目錄</string>
     <string name="create_downloads_file_error">無法在下載目錄建立檔案</string>
-    <string name="create_empty">從空白開始建立</string>
     <string name="create_from_file">從檔案或壓縮檔匯入</string>
     <string name="create_output_dir_error">無法建立輸出目錄</string>
     <string name="create_temp_dir_error">無法建立本地暫存目錄</string>

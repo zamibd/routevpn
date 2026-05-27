@@ -4,7 +4,6 @@
  */
 package io.routedns.vpn.fragment
 
-import android.content.Intent
 import android.content.res.Resources
 import android.os.Bundle
 import android.util.Log
@@ -26,7 +25,6 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.zxing.qrcode.QRCodeReader
 import io.routedns.vpn.Application
 import io.routedns.vpn.R
-import io.routedns.vpn.activity.TunnelCreatorActivity
 import io.routedns.vpn.databinding.ObservableKeyedRecyclerViewAdapter.RowConfigurationHandler
 import io.routedns.vpn.databinding.TunnelListFragmentBinding
 import io.routedns.vpn.databinding.TunnelListItemBinding
@@ -92,14 +90,8 @@ class TunnelListFragment : BaseFragment() {
                 if (childFragmentManager.findFragmentByTag("BOTTOM_SHEET") != null)
                     return@setOnClickListener
                 childFragmentManager.setFragmentResultListener(AddTunnelsSheet.REQUEST_KEY_NEW_TUNNEL, viewLifecycleOwner) { _, bundle ->
-                    when (bundle.getString(AddTunnelsSheet.REQUEST_METHOD)) {
-                        AddTunnelsSheet.REQUEST_CREATE -> {
-                            startActivity(Intent(requireActivity(), TunnelCreatorActivity::class.java))
-                        }
-
-                        AddTunnelsSheet.REQUEST_IMPORT -> {
-                            tunnelFileImportResultLauncher.launch("*/*")
-                        }
+                    if (bundle.getString(AddTunnelsSheet.REQUEST_METHOD) == AddTunnelsSheet.REQUEST_IMPORT) {
+                        tunnelFileImportResultLauncher.launch("*/*")
                     }
                 }
                 bottomSheet.showNow(childFragmentManager, "BOTTOM_SHEET")

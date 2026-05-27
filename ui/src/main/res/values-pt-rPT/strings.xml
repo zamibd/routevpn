@@ -99,7 +99,6 @@
     <string name="create_activity_title">Criar túnel RouteVPN</string>
     <string name="create_bin_dir_error">Não foi possível criar diretoria de binários local</string>
     <string name="create_downloads_file_error">Não foi possível criar diretoria de downloads local</string>
-    <string name="create_empty">Criar do zero</string>
     <string name="create_from_file">Importar de ficheiro ou arquivo</string>
     <string name="create_output_dir_error">Não foi possível criar diretoria de saída</string>
     <string name="create_temp_dir_error">Não foi possível criar diretoria local temporária</string>
