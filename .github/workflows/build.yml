@@ -118,13 +118,43 @@ jobs:
       shell: bash
       env:
         GRADLE_TASK: ${{ steps.cfg.outputs.gradle_task }}
+        KEYSTORE_PATH: ${{ env.KEYSTORE_PATH }}
         ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
         ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
         ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
       run: |
         set -euo pipefail
         chmod +x ./gradlew
-        ./gradlew --no-daemon --no-build-cache --stacktrace "${GRADLE_TASK}"
+        ./gradlew --no-daemon --no-build-cache --no-configuration-cache --stacktrace "${GRADLE_TASK}"
+
+    - name: Sign release APKs (if still unsigned)
+      if: ${{ steps.cfg.outputs.needs_signing == 'true' && steps.cfg.outputs.kind == 'apk' }}
+      shell: bash
+      env:
+        ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+        ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+        ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
+      run: |
+        set -euo pipefail
+        shopt -s nullglob
+        unsigned=(./ui/build/outputs/apk/release/*-unsigned.apk)
+        if [[ ${#unsigned[@]} -eq 0 ]]; then
+          echo "Gradle produced signed APKs."
+          exit 0
+        fi
+        APKSIGNER="$(find "${ANDROID_HOME}/build-tools" -type f -name apksigner | sort -V | tail -n 1)"
+        KEY_PASS="${ANDROID_KEY_PASSWORD:-${ANDROID_KEYSTORE_PASSWORD}}"
+        for apk in "${unsigned[@]}"; do
+          signed="${apk/-unsigned/}"
+          "${APKSIGNER}" sign \
+            --ks "${KEYSTORE_PATH}" \
+            --ks-pass "pass:${ANDROID_KEYSTORE_PASSWORD}" \
+            --ks-key-alias "${ANDROID_KEY_ALIAS}" \
+            --key-pass "pass:${KEY_PASS}" \
+            --out "${signed}" \
+            "${apk}"
+          rm -f "${apk}"
+        done
 
     - name: Collect built artifacts
       shell: bash
@@ -141,7 +171,20 @@ jobs:
             cp ./ui/build/outputs/apk/debug/*.apk output/
             ;;
           release_apk)
-            cp ./ui/build/outputs/apk/release/*.apk output/
+            shopt -s nullglob
+            copied=0
+            for apk in ./ui/build/outputs/apk/release/*.apk; do
+              if [[ "${apk}" == *-unsigned.apk ]]; then
+                continue
+              fi
+              cp "${apk}" output/
+              copied=$((copied + 1))
+            done
+            if [[ "${copied}" -eq 0 ]]; then
+              echo "::error::No signed release APKs found in ui/build/outputs/apk/release/"
+              ls -la ./ui/build/outputs/apk/release/ || true
+              exit 1
+            fi
             ;;
           *)
             echo "Unknown target: ${BUILD_TARGET}" >&2
@@ -159,12 +202,22 @@ jobs:
         BUILD_KIND: ${{ steps.cfg.outputs.kind }}
       run: |
         set -euo pipefail
+        APKSIGNER="$(find "${ANDROID_HOME}/build-tools" -type f -name apksigner | sort -V | tail -n 1)"
         if [[ "${BUILD_KIND}" == "aab" ]]; then
           AAB="$(ls output/*.aab)"
-          jarsigner -verify -verbose "${AAB}" | head -20
+          "${APKSIGNER}" verify --verbose "${AAB}"
         else
-          APKSIGNER="$(find "${ANDROID_HOME}/build-tools" -type f -name apksigner | sort -V | tail -n 1)"
-          for APK in output/*.apk; do
+          shopt -s nullglob
+          apks=(output/*.apk)
+          if [[ ${#apks[@]} -eq 0 ]]; then
+            echo "::error::No APK artifacts to verify in output/"
+            exit 1
+          fi
+          for APK in "${apks[@]}"; do
+            if [[ "${APK}" == *-unsigned.apk ]]; then
+              echo "::error::Refusing to verify unsigned artifact: ${APK}" >&2
+              exit 1
+            fi
             "${APKSIGNER}" verify --verbose "${APK}"
           done
         fi

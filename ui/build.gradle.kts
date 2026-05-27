@@ -9,15 +9,6 @@ val pkg: String = providers.gradleProperty("amneziawgPackageName").get()
 // Play App Bundles must not use APK ABI splits (Play serves per-ABI from the bundle).
 val buildingBundle = gradle.startParameter.taskNames.any { it.contains("bundle", ignoreCase = true) }
 
-val releaseKeystorePath = System.getenv("KEYSTORE_PATH")
-val releaseKeystorePassword = System.getenv("ANDROID_KEYSTORE_PASSWORD")
-val releaseKeyAlias = System.getenv("ANDROID_KEY_ALIAS")
-val releaseKeyPassword = System.getenv("ANDROID_KEY_PASSWORD") ?: releaseKeystorePassword
-val hasReleaseSigning = !releaseKeystorePath.isNullOrBlank() &&
-    !releaseKeystorePassword.isNullOrBlank() &&
-    !releaseKeyAlias.isNullOrBlank() &&
-    file(releaseKeystorePath).isFile
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.legacy.kapt)
@@ -42,24 +33,11 @@ extensions.configure<ApplicationExtension> {
         targetCompatibility = JavaVersion.VERSION_17
         isCoreLibraryDesugaringEnabled = true
     }
-    signingConfigs {
-        if (hasReleaseSigning) {
-            create("release") {
-                storeFile = file(releaseKeystorePath!!)
-                storePassword = releaseKeystorePassword
-                keyAlias = releaseKeyAlias
-                keyPassword = releaseKeyPassword
-            }
-        }
-    }
     buildTypes {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles("proguard-android-optimize.txt")
-            if (hasReleaseSigning) {
-                signingConfig = signingConfigs.getByName("release")
-            }
             packaging {
                 resources {
                     excludes += "DebugProbesKt.bin"
@@ -133,4 +111,35 @@ tasks.withType<JavaCompile>().configureEach {
 
 tasks.withType<KotlinCompile>().configureEach {
     compilerOptions.jvmTarget.set(JvmTarget.JVM_17)
+}
+
+// Read signing env at execution time so CI env vars are not missed by configuration cache.
+extensions.configure<ApplicationExtension> {
+    afterEvaluate {
+        val keystorePath = System.getenv("KEYSTORE_PATH")
+        val keystoreStorePassword = System.getenv("ANDROID_KEYSTORE_PASSWORD")
+        val keystoreAlias = System.getenv("ANDROID_KEY_ALIAS")
+        val keystoreKeyPassword = System.getenv("ANDROID_KEY_PASSWORD") ?: keystoreStorePassword
+        if (
+            keystorePath.isNullOrBlank() ||
+            keystoreStorePassword.isNullOrBlank() ||
+            keystoreAlias.isNullOrBlank()
+        ) {
+            return@afterEvaluate
+        }
+        val keystoreFile = file(keystorePath)
+        if (!keystoreFile.isFile) {
+            return@afterEvaluate
+        }
+        signingConfigs {
+            create("release") {
+                storeFile = keystoreFile
+                storePassword = keystoreStorePassword
+                keyAlias = keystoreAlias
+                keyPassword = keystoreKeyPassword
+            }
+        }
+        buildTypes.getByName("release").signingConfig = signingConfigs.getByName("release")
+        buildTypes.getByName("googleplay").signingConfig = signingConfigs.getByName("release")
+    }
 }
