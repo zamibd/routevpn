@@ -88,6 +88,7 @@
     <string name="error_no_qr_found">Δεν βρέθηκε κωδικός QR στην εικόνα</string>
     <string name="error_qr_checksum">Αποτυχία επαλήθευσης checksum κωδικού QR</string>
     <string name="cancel">Ακύρωση</string>
+    <string name="create_empty">Δημιουργία από την αρχή</string>
     <string name="create_from_file">Εισαγωγή από αρχείο ή αρχειοθήκη</string>
     <string name="dark_theme_title">Χρήση σκούρου θέματος</string>
     <string name="delete">Διαγραφή</string>

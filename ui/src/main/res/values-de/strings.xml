@@ -101,6 +101,7 @@
     <string name="create_activity_title">RouteVPN-Tunnel erstellen</string>
     <string name="create_bin_dir_error">Lokales Anwendungsverzeichnis kann nicht erstellt werden</string>
     <string name="create_downloads_file_error">Datei kann im Download-Verzeichnis nicht erstellt werden</string>
+    <string name="create_empty">Neu erstellen</string>
     <string name="create_from_file">Aus Datei oder Archiv importieren</string>
     <string name="create_output_dir_error">Konnte das Ausgabeverzeichnis nicht erstellen</string>
     <string name="create_temp_dir_error">Lokales temporäres Verzeichnis kann nicht erstellt werden</string>
